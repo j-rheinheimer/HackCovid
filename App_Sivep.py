@@ -6,8 +6,6 @@ from tkinter import *
 
 class Application:
 
-# Mateus Corradini
-
     def __init__(self, master=None):
         self.fonte = ("Verdana", "10")
 
@@ -434,14 +432,6 @@ class Application:
         self.txtc27["width"] = 20
         self.txtc27.pack(side=LEFT)
 
-# Mateus Corradini
-
-# João Victor
-
-# João Victor
-
-# João Pedro
-
     def dadosLaboratoriais(self):
         dados_laboratoriais = Toplevel(root)
         dados_laboratoriais.title('Formulário SIVEP')
@@ -460,350 +450,356 @@ class Application:
         self.container2['pady'] = 8
         self.container2.pack()
 
-        self.lbl_56 = Label(self.container2)
-        self.lbl_56['text'] = '56 - Nº Requisição do GAL'
-        self.lbl_56.pack(side=LEFT)
+        self.lbl_c56 = Label(self.container2)
+        self.lbl_c56['text'] = '56 - Nº Requisição do GAL'
+        self.lbl_c56.pack(side=LEFT)
 
-        self.txt_56 = Entry(self.container2)
-        self.txt_56['width'] = 100
-        self.txt_56.pack(side=LEFT) 
+        self.txt_c56 = Entry(self.container2)
+        self.txt_c56['width'] = 100
+        self.txt_c56.pack(side=LEFT) 
 
         self.container3 = Frame(dados_laboratoriais)
         self.container3['padx'] = 10
         self.container3['pady'] = 8
         self.container3.pack()
 
-        self.lbl_57 = Label(self.container3)
-        self.lbl_57['text'] = '57 - Resultado da IF/outro método que não seja biologia molecular:'
-        self.lbl_57.pack(side=LEFT)
+        self.lbl_c57 = Label(self.container3)
+        self.lbl_c57['text'] = ('57 - Resultado da IF/outro método que não seja biologia molecular:'+
+            '(1 - Positivo, 2 - Negativo, 3 - Inconclusivo, '+
+            '4 - Não realizado, 5 - Aguardando resultado, 9 - Ignorado):')
+        self.lbl_c57.pack(side=LEFT)
 
-        self.lbl_57_opcoes = Label(self.container3)
-        self.lbl_57_opcoes['text'] = '(1 - Positivo, 2 - Negativo, 3 - Inconclusivo, 4 - Não realizado, 5 - Aguardando resultado, 9 - Ignorado):'
-        self.lbl_57_opcoes.pack(side=LEFT)
-
-        self.txt_57 = Entry(self.container3)
-        self.txt_57['width'] = 2
-        self.txt_57.pack(side=LEFT)
+        self.txt_c57 = Entry(self.container3)
+        self.txt_c57['width'] = 2
+        self.txt_c57.pack(side=LEFT)
 
         self.container4 = Frame(dados_laboratoriais)
         self.container4['padx'] = 10
         self.container4['pady'] = 8
         self.container4.pack()
 
-        self.lbl_58 = Label(self.container4)
-        self.lbl_58['text'] = '58 - Data do resultado da IF/outro método que não seja Biologia Molecular:'
-        self.lbl_58.pack(side=LEFT)
+        self.lbl_c58 = Label(self.container4)
+        self.lbl_c58['text'] = '58 - Data do resultado da IF/outro método que não seja Biologia Molecular:'
+        self.lbl_c58.pack(side=LEFT)
 
-        self.txt_58 = Entry(self.container4)
-        self.txt_58['width'] = 15
-        self.txt_58.pack(side=LEFT)
+        self.txt_c58 = Entry(self.container4)
+        self.txt_c58['width'] = 15
+        self.txt_c58.pack(side=LEFT)
 
         self.container5 = Frame(dados_laboratoriais)
         self.container5['padx'] = 10
         self.container5['pady'] = 8
         self.container5.pack()
 
-        self.lbl_59_title = Label(self.container5)
-        self.lbl_59_title['text'] = '59 - Agente Etiológico - IF/outro método que não seja Biologia Molecular:'
-        self.lbl_59_title.pack(side=LEFT)
+        self.lbl_c59_title1 = Label(self.container5)
+        self.lbl_c59_title1['text'] = '59 - Agente Etiológico - IF/outro método que não seja Biologia Molecular:'
+        self.lbl_c59_title1.pack(side=LEFT)
 
-        self.lbl_59_1 = Label(self.container5)
-        self.lbl_59_1['text'] = 'Positivo para influenza? (1 - Sim, 2 - Não, 9 - Ignorado):'
-        self.lbl_59_1.pack(side=LEFT)
+        self.lbl_c59_1 = Label(self.container5)
+        self.lbl_c59_1['text'] = 'Positivo para influenza? (1 - Sim, 2 - Não, 9 - Ignorado):'
+        self.lbl_c59_1.pack(side=LEFT)
 
-        self.txt_59_1 = Entry(self.container5)
-        self.txt_59_1['width'] = 2
-        self.txt_59_1.pack(side=LEFT)
+        self.txt_c59_1 = Entry(self.container5)
+        self.txt_c59_1['width'] = 2
+        self.txt_c59_1.pack(side=LEFT)
 
-        self.lbl_59_2 = Label(self.container5)
-        self.lbl_59_2['text'] = 'Positivo para outro vírus? (1 - Sim, 2 - Não, 9 - Ignorado):'
-        self.lbl_59_2.pack(side=LEFT)
+        self.lbl_c59_2 = Label(self.container5)
+        self.lbl_c59_2['text'] = 'Se sim, qual influenza? (1 - Influenza A, 2 - Influenza B):'
+        self.lbl_c59_2.pack(side=LEFT)
 
-        self.txt_59_2 = Entry(self.container5)
-        self.txt_59_2['width'] = 2
-        self.txt_59_2.pack(side=LEFT)
+        self.txt_c59_2 = Entry(self.container5)
+        self.txt_c59_2['width'] = 2
+        self.txt_c59_2.pack(side=LEFT)
+
+        self.lbl_c59_3 = Label(self.container5)
+        self.lbl_c59_3['text'] = 'Positivo para outro vírus? (1 - Sim, 2 - Não, 9 - Ignorado):'
+        self.lbl_c59_3.pack(side=LEFT)
+
+        self.txt_c59_3 = Entry(self.container5)
+        self.txt_c59_3['width'] = 2
+        self.txt_c59_3.pack(side=LEFT)
 
         self.container6 = Frame(dados_laboratoriais)
         self.container6['padx'] = 10
         self.container6['pady'] = 8
         self.container6.pack()
 
-        self.lbl_59_3 = Label(self.container6)
-        self.lbl_59_3['text'] = 'Se outro vírus respiratórios qual(is)? (Marcar X): '
-        self.lbl_59_3.pack(side=LEFT)
+        self.lbl_c59_title2 = Label(self.container6)
+        self.lbl_c59_title2['text'] = 'Se outro vírus respiratórios qual(is)? (Marcar X): '
+        self.lbl_c59_title2.pack(side=LEFT)
 
-        self.lbl_59_sinicial = Label(self.container6)
-        self.lbl_59_sinicial['text'] = 'Virus Sincicial Respiratório:'
-        self.lbl_59_sinicial.pack(side=LEFT)
+        self.lbl_c59_4 = Label(self.container6)
+        self.lbl_c59_4['text'] = 'Virus Sincicial Respiratório:'
+        self.lbl_c59_4.pack(side=LEFT)
 
-        self.txt_59_sinicial = Entry(self.container6)
-        self.txt_59_sinicial['width'] = 2
-        self.txt_59_sinicial.pack(side=LEFT)
+        self.txt_c59_4 = Entry(self.container6)
+        self.txt_c59_4['width'] = 2
+        self.txt_c59_4.pack(side=LEFT)
 
-        self.lbl_59_parainfluenza_1 = Label(self.container6)
-        self.lbl_59_parainfluenza_1['text'] = 'Parainfluenza 1:'
-        self.lbl_59_parainfluenza_1.pack(side=LEFT)
+        self.lbl_c59_5 = Label(self.container6)
+        self.lbl_c59_5['text'] = 'Parainfluenza 1:'
+        self.lbl_c59_5.pack(side=LEFT)
 
-        self.txt_59_parainfluenza_1 = Entry(self.container6)
-        self.txt_59_parainfluenza_1['width'] = 2
-        self.txt_59_parainfluenza_1.pack(side=LEFT)
+        self.txt_c59_5 = Entry(self.container6)
+        self.txt_c59_5['width'] = 2
+        self.txt_c59_5.pack(side=LEFT)
 
-        self.lbl_59_parainfluenza_2 = Label(self.container6)
-        self.lbl_59_parainfluenza_2['text'] = 'Parainfluenza 2:'
-        self.lbl_59_parainfluenza_2.pack(side=LEFT)
+        self.lbl_c59_6 = Label(self.container6)
+        self.lbl_c59_6['text'] = 'Parainfluenza 2:'
+        self.lbl_c59_6.pack(side=LEFT)
 
-        self.txt_59_parainfluenza_2 = Entry(self.container6)
-        self.txt_59_parainfluenza_2['width'] = 2
-        self.txt_59_parainfluenza_2.pack(side=LEFT)
+        self.txt_c59_6 = Entry(self.container6)
+        self.txt_c59_6['width'] = 2
+        self.txt_c59_6.pack(side=LEFT)
 
-        self.lbl_59_parainfluenza_3 = Label(self.container6)
-        self.lbl_59_parainfluenza_3['text'] = 'Parainfluenza 3:'
-        self.lbl_59_parainfluenza_3.pack(side=LEFT)
+        self.lbl_c59_7 = Label(self.container6)
+        self.lbl_c59_7['text'] = 'Parainfluenza 3:'
+        self.lbl_c59_7.pack(side=LEFT)
 
-        self.txt_59_parainfluenza_3 = Entry(self.container6)
-        self.txt_59_parainfluenza_3['width'] = 2
-        self.txt_59_parainfluenza_3.pack(side=LEFT)
+        self.txt_c59_7 = Entry(self.container6)
+        self.txt_c59_7['width'] = 2
+        self.txt_c59_7.pack(side=LEFT)
 
-        self.lbl_59_adenovirus = Label(self.container6)
-        self.lbl_59_adenovirus['text'] = 'Adenovírus:'
-        self.lbl_59_adenovirus.pack(side=LEFT)
+        self.lbl_c59_8 = Label(self.container6)
+        self.lbl_c59_8['text'] = 'Adenovírus:'
+        self.lbl_c59_8.pack(side=LEFT)
 
-        self.txt_59_adenovirus = Entry(self.container6)
-        self.txt_59_adenovirus['width'] = 2
-        self.txt_59_adenovirus.pack(side=LEFT)
+        self.txt_c59_8 = Entry(self.container6)
+        self.txt_c59_8['width'] = 2
+        self.txt_c59_8.pack(side=LEFT)
 
-        self.lbl_59_outro = Label(self.container6)
-        self.lbl_59_outro['text'] = 'Outro vírus respiratório, especifique:'
-        self.lbl_59_outro.pack(side=LEFT)
+        self.lbl_c59_9 = Label(self.container6)
+        self.lbl_c59_9['text'] = 'Outro vírus respiratório, especifique:'
+        self.lbl_c59_9.pack(side=LEFT)
 
-        self.txt_59_outro = Entry(self.container6)
-        self.txt_59_outro['width'] = 15
-        self.txt_59_outro.pack(side=LEFT)
+        self.txt_c59_9 = Entry(self.container6)
+        self.txt_c59_9['width'] = 15
+        self.txt_c59_9.pack(side=LEFT)
 
         self.container7 = Frame(dados_laboratoriais)
         self.container7['padx'] = 10
         self.container7['pady'] = 8
         self.container7.pack()
 
-        self.lbl_60_1 = Label(self.container7)
-        self.lbl_60_1['text'] = '60 - Laboratório que realizou IF/outro método que não seja biologia molecular:'
-        self.lbl_60_1.pack(side=LEFT)
+        self.lbl_c60_1 = Label(self.container7)
+        self.lbl_c60_1['text'] = '60 - Laboratório que realizou IF/outro método que não seja biologia molecular:'
+        self.lbl_c60_1.pack(side=LEFT)
 
-        self.txt_60_1 = Entry(self.container7)
-        self.txt_60_1['width'] = 15
-        self.txt_60_1.pack(side=LEFT)
+        self.txt_c60_1 = Entry(self.container7)
+        self.txt_c60_1['width'] = 15
+        self.txt_c60_1.pack(side=LEFT)
 
-        self.lbl_60_2 = Label(self.container7)
-        self.lbl_60_2['text'] = 'Código (CNES):'
-        self.lbl_60_2.pack(side=LEFT)
+        self.lbl_c60_2 = Label(self.container7)
+        self.lbl_c60_2['text'] = 'Código (CNES):'
+        self.lbl_c60_2.pack(side=LEFT)
 
-        self.txt_60_2 = Entry(self.container7)
-        self.txt_60_2['width'] = 10
-        self.txt_60_2.pack(side=LEFT)
+        self.txt_c60_2 = Entry(self.container7)
+        self.txt_c60_2['width'] = 10
+        self.txt_c60_2.pack(side=LEFT)
 
         self.container8 = Frame(dados_laboratoriais)
         self.container8['padx'] = 10
         self.container8['pady'] = 8
         self.container8.pack()
 
-        self.lbl_61 = Label(self.container8)
-        self.lbl_61['text'] = '61 - Resultado da RT-PCR/outro método por Biologia Molecular: (1 - Detectável, 2 - Não detectável, 3 - Inconclusivo, 4 - Não realizado, 5 - Aguardando resultado, 9 - Ignorado)'
-        self.lbl_61.pack(side=LEFT)
+        self.lbl_c61 = Label(self.container8)
+        self.lbl_c61['text'] = '61 - Resultado da RT-PCR/outro método por Biologia Molecular: (1 - Detectável, 2 - Não detectável, 3 - Inconclusivo, 4 - Não realizado, 5 - Aguardando resultado, 9 - Ignorado)'
+        self.lbl_c61.pack(side=LEFT)
 
-        self.txt_61 = Entry(self.container8)
-        self.txt_61['width'] = 2
-        self.txt_61.pack(side=LEFT)
+        self.txt_c61 = Entry(self.container8)
+        self.txt_c61['width'] = 2
+        self.txt_c61.pack(side=LEFT)
 
         self.container9 = Frame(dados_laboratoriais)
         self.container9['padx'] = 10
         self.container9['pady'] = 8
         self.container9.pack()
 
-        self.lbl_62 = Label(self.container9)
-        self.lbl_62['text'] = '62 - Data do resultado RT-PCR/Outro métdodo por Biologia Molecular:'
-        self.lbl_62.pack(side=LEFT)
+        self.lbl_c62 = Label(self.container9)
+        self.lbl_c62['text'] = '62 - Data do resultado RT-PCR/Outro métdodo por Biologia Molecular:'
+        self.lbl_c62.pack(side=LEFT)
 
-        self.txt_62 = Entry(self.container9)
-        self.txt_62['width'] = 15
-        self.txt_62.pack(side=LEFT)
+        self.txt_c62 = Entry(self.container9)
+        self.txt_c62['width'] = 15
+        self.txt_c62.pack(side=LEFT)
 
         self.container10 = Frame(dados_laboratoriais)
         self.container10['padx'] = 10
         self.container10['pady'] = 8
         self.container10.pack()
 
-        self.lbl_63_1 = Label(self.container10)
-        self.lbl_63_1['text'] = ('63 - Agente Etiológico - RT-PCR/outro método por Biologia Molecular '+
-            '(1 - Sim, 2 - Não, 9 - Ignorado): ')
-        self.lbl_63_1.pack(side=LEFT)
+        self.lbl_c63_1_1 = Label(self.container10)
+        self.lbl_c63_1_1['text'] = ('63 - Agente Etiológico - RT-PCR/outro método por Biologia Molecular '+
+            'Positivo para Influenza? (1 - Sim, 2 - Não, 9 - Ignorado): ')
+        self.lbl_c63_1_1.pack(side=LEFT)
 
-        self.txt_63_1 = Entry(self.container10)
-        self.txt_63_1['width'] = 2
-        self.txt_63_1.pack(side=LEFT)
+        self.txt_c63_1_1 = Entry(self.container10)
+        self.txt_c63_1_1['width'] = 2
+        self.txt_c63_1_1.pack(side=LEFT)
 
-        self.lbl_63_2 = Label(self.container10)
-        self.lbl_63_2['text'] = 'Se sim, qual influenza? (1 - Influenza A, 2 - Influenza B):'
-        self.lbl_63_2.pack(side=LEFT)
+        self.lbl_c63_1_2 = Label(self.container10)
+        self.lbl_c63_1_2['text'] = 'Se sim, qual influenza? (1 - Influenza A, 2 - Influenza B):'
+        self.lbl_c63_1_2.pack(side=LEFT)
 
-        self.txt_63_2 = Entry(self.container10)
-        self.txt_63_2['width'] = 2
-        self.txt_63_2.pack(side=LEFT)
+        self.txt_c63_1_2 = Entry(self.container10)
+        self.txt_c63_1_2['width'] = 2
+        self.txt_c63_1_2.pack(side=LEFT)
 
         self.container11 = Frame(dados_laboratoriais)
         self.container11['padx'] = 10
         self.container11['pady'] = 8
         self.container11.pack()   
 
-        self.lbl_63_3 = Label(self.container11)
-        self.lbl_63_3['text'] = ('Influenza A, qual subtipo? '+
+        self.lbl_c63_2 = Label(self.container11)
+        self.lbl_c63_2['text'] = ('Influenza A, qual subtipo? '+
             '(1 - Influenza A(H1N1)pdm09, 2 - Influenza A/H3N2, '+
             '3 - Influenza A não subtipado, 4 - Influenza A não subtipável, '+
             '5 - Inconclusivo, 6 - Outro, especifique):')
-        self.lbl_63_3.pack(side=LEFT)
+        self.lbl_c63_2.pack(side=LEFT)
 
-        self.txt_63_3 = Entry(self.container11)
-        self.txt_63_3['width'] = 10
-        self.txt_63_3.pack(side=LEFT)
+        self.txt_c63_2 = Entry(self.container11)
+        self.txt_c63_2['width'] = 10
+        self.txt_c63_2.pack(side=LEFT)
 
         self.container12 = Frame(dados_laboratoriais)
         self.container12['padx'] = 10
         self.container12['pady'] = 8
         self.container12.pack()
 
-        self.lbl_63_4 = Label(self.container12)
-        self.lbl_63_4['text'] = ('Influenza B, qual subtipo? '+
+        self.lbl_c63_3 = Label(self.container12)
+        self.lbl_c63_3['text'] = ('Influenza B, qual subtipo? '+
             '(1 - Victoria, 2 - Yamagatha, 3 - Não realizado, 4 - Inconclusivo, 5 - Outro, especifique):'
         )
-        self.lbl_63_4.pack(side=LEFT)
+        self.lbl_c63_3.pack(side=LEFT)
 
-        self.txt_63_4 = Entry(self.container12)
-        self.txt_63_4['width'] = 10
-        self.txt_63_4.pack(side=LEFT)
+        self.txt_c63_3 = Entry(self.container12)
+        self.txt_c63_3['width'] = 10
+        self.txt_c63_3.pack(side=LEFT)
 
-        self.lbl_63_5 = Label(self.container12)
-        self.lbl_63_5['text'] = 'Positivo para outro vírus? (1 - Sim, 2 - Não, 9 - Ignorado):'
-        self.lbl_63_5.pack(side=LEFT)
+        self.lbl_c63_4 = Label(self.container12)
+        self.lbl_c63_4['text'] = 'Positivo para outro vírus? (1 - Sim, 2 - Não, 9 - Ignorado):'
+        self.lbl_c63_4.pack(side=LEFT)
 
-        self.txt_63_5 = Entry(self.container12)
-        self.txt_63_5['width'] = 2
-        self.txt_63_5.pack(side=LEFT)
+        self.txt_c63_4 = Entry(self.container12)
+        self.txt_c63_4['width'] = 2
+        self.txt_c63_4.pack(side=LEFT)
 
         self.container13 = Frame(dados_laboratoriais)
         self.container13['padx'] = 10
         self.container13['pady'] = 8
         self.container13.pack()
 
-        self.lbl_63_6_titulo = Label(self.container13)
-        self.lbl_63_6_titulo['text'] = ('Se outros vírus respiratórios, qual (is)? (Marcar X): ')
+        self.lbl_c63_5_titulo = Label(self.container13)
+        self.lbl_c63_5_titulo['text'] = ('Se outros vírus respiratórios, qual (is)? (Marcar X): ')
 
-        self.lbl_63_6_sarscov2 = Label(self.container13)
-        self.lbl_63_6_sarscov2['text'] = 'SARS-CoV-2:'
-        self.lbl_63_6_sarscov2.pack(side=LEFT)
+        self.lbl_c63_5_1 = Label(self.container13)
+        self.lbl_c63_5_1['text'] = 'SARS-CoV-2:'
+        self.lbl_c63_5_1.pack(side=LEFT)
 
-        self.txt_63_6_sarscov2 = Entry(self.container13)
-        self.txt_63_6_sarscov2['width'] = 2
-        self.txt_63_6_sarscov2.pack(side=LEFT)
+        self.txt_c63_5_1 = Entry(self.container13)
+        self.txt_c63_5_1['width'] = 2
+        self.txt_c63_5_1.pack(side=LEFT)
 
-        self.lbl_63_6_sinicial = Label(self.container13)
-        self.lbl_63_6_sinicial['text'] = 'Vírus Sincicial Respiratório: '
-        self.lbl_63_6_sinicial.pack(side=LEFT)
+        self.lbl_c63_5_2 = Label(self.container13)
+        self.lbl_c63_5_2['text'] = 'Vírus Sincicial Respiratório: '
+        self.lbl_c63_5_2.pack(side=LEFT)
 
-        self.txt_63_6_sinicial = Entry(self.container13)
-        self.txt_63_6_sinicial['width'] = 2
-        self.txt_63_6_sinicial.pack(side=LEFT)
+        self.txt_c63_5_2 = Entry(self.container13)
+        self.txt_c63_5_2['width'] = 2
+        self.txt_c63_5_2.pack(side=LEFT)
 
-        self.lbl_63_6_parainfluenza_1 = Label(self.container13)
-        self.lbl_63_6_parainfluenza_1['text'] = 'Parainfluenza 1: '
-        self.lbl_63_6_parainfluenza_1.pack(side=LEFT)
+        self.lbl_c63_5_3 = Label(self.container13)
+        self.lbl_c63_5_3['text'] = 'Parainfluenza 1: '
+        self.lbl_c63_5_3.pack(side=LEFT)
 
-        self.txt_63_6_parainfluenza_1 = Entry(self.container13)
-        self.txt_63_6_parainfluenza_1['width'] = 2
-        self.txt_63_6_parainfluenza_1.pack(side=LEFT)
+        self.txt_c63_5_3 = Entry(self.container13)
+        self.txt_c63_5_3['width'] = 2
+        self.txt_c63_5_3.pack(side=LEFT)
 
-        self.lbl_63_6_parainfluenza_2 = Label(self.container13)
-        self.lbl_63_6_parainfluenza_2['text'] = 'Parainfluenza 2: '
-        self.lbl_63_6_parainfluenza_2.pack(side=LEFT)
+        self.lbl_c63_5_4 = Label(self.container13)
+        self.lbl_c63_5_4['text'] = 'Parainfluenza 2: '
+        self.lbl_c63_5_4.pack(side=LEFT)
 
-        self.txt_63_6_parainfluenza_2 = Entry(self.container13)
-        self.txt_63_6_parainfluenza_2['width'] = 2
-        self.txt_63_6_parainfluenza_2.pack(side=LEFT)
+        self.txt_c63_5_4 = Entry(self.container13)
+        self.txt_c63_5_4['width'] = 2
+        self.txt_c63_5_4.pack(side=LEFT)
 
-        self.lbl_63_6_parainfluenza_3 = Label(self.container13)
-        self.lbl_63_6_parainfluenza_3['text'] = 'Parainfluenza 3: '
-        self.lbl_63_6_parainfluenza_3.pack(side=LEFT)
+        self.lbl_c63_5_5 = Label(self.container13)
+        self.lbl_c63_5_5['text'] = 'Parainfluenza 3: '
+        self.lbl_c63_5_5.pack(side=LEFT)
 
-        self.txt_63_6_parainfluenza_3 = Entry(self.container13)
-        self.txt_63_6_parainfluenza_3['width'] = 2
-        self.txt_63_6_parainfluenza_3.pack(side=LEFT)
+        self.txt_c63_5_6 = Entry(self.container13)
+        self.txt_c63_5_6['width'] = 2
+        self.txt_c63_5_6.pack(side=LEFT)
 
-        self.lbl_63_6_parainfluenza_4 = Label(self.container13)
-        self.lbl_63_6_parainfluenza_4['text'] = 'Parainfluenza 4: '
-        self.lbl_63_6_parainfluenza_4.pack(side=LEFT)
+        self.lbl_c63_5_6 = Label(self.container13)
+        self.lbl_c63_5_6['text'] = 'Parainfluenza 4: '
+        self.lbl_c63_5_6.pack(side=LEFT)
 
-        self.txt_63_6_parainfluenza_4 = Entry(self.container13)
-        self.txt_63_6_parainfluenza_4['width'] = 2
-        self.txt_63_6_parainfluenza_4.pack(side=LEFT)
+        self.txt_c63_5_6 = Entry(self.container13)
+        self.txt_c63_5_6['width'] = 2
+        self.txt_c63_5_6.pack(side=LEFT)
 
-        self.lbl_63_6_adenovirus = Label(self.container13)
-        self.lbl_63_6_adenovirus['text'] = 'Adenovírus: '
-        self.lbl_63_6_adenovirus.pack(side=LEFT)
+        self.lbl_c63_5_7 = Label(self.container13)
+        self.lbl_c63_5_7['text'] = 'Adenovírus: '
+        self.lbl_c63_6_7.pack(side=LEFT)
 
-        self.txt_63_6_adenovirus = Entry(self.container13)
-        self.txt_63_6_adenovirus['width'] = 2
-        self.txt_63_6_adenovirus.pack(side=LEFT)
+        self.txt_c63_5_7 = Entry(self.container13)
+        self.txt_c63_5_7['width'] = 2
+        self.txt_c63_5_7.pack(side=LEFT)
 
-        self.lbl_63_6_metapneumovirus = Label(self.container13)
-        self.lbl_63_6_metapneumovirus['text'] = 'Metapneumovírus: '
-        self.lbl_63_6_metapneumovirus.pack(side=LEFT)
+        self.lbl_c63_5_8 = Label(self.container13)
+        self.lbl_c63_5_8['text'] = 'Metapneumovírus: '
+        self.lbl_c63_5_8.pack(side=LEFT)
 
-        self.txt_63_6_metapneumovirus = Entry(self.container13)
-        self.txt_63_6_metapneumovirus['width'] = 2
-        self.txt_63_6_metapneumovirus.pack(side=LEFT)
+        self.txt_c63_5_8 = Entry(self.container13)
+        self.txt_c63_5_8['width'] = 2
+        self.txt_c63_5_8.pack(side=LEFT)
 
-        self.lbl_63_6_bocavirus = Label(self.container13)
-        self.lbl_63_6_bocavirus['text'] = 'Bocavírus: '
-        self.lbl_63_6_bocavirus.pack(side=LEFT)
+        self.lbl_c63_5_9 = Label(self.container13)
+        self.lbl_c63_5_9['text'] = 'Bocavírus: '
+        self.lbl_c63_5_9.pack(side=LEFT)
 
-        self.txt_63_6_bocavirus = Entry(self.container13)
-        self.txt_63_6_bocavirus['width'] = 2
-        self.txt_63_6_bocavirus.pack(side=LEFT)
+        self.txt_c63_5_9 = Entry(self.container13)
+        self.txt_c63_5_9['width'] = 2
+        self.txt_c63_5_9.pack(side=LEFT)
 
-        self.lbl_63_6_rinovirus = Label(self.container13)
-        self.lbl_63_6_rinovirus['text'] = 'Rinovírus: '
-        self.lbl_63_6_rinovirus.pack(side=LEFT)
+        self.lbl_c63_5_10 = Label(self.container13)
+        self.lbl_c63_5_10['text'] = 'Rinovírus: '
+        self.lbl_c63_5_10.pack(side=LEFT)
 
-        self.txt_63_6_rinovirus = Entry(self.container13)
-        self.txt_63_6_rinovirus['width'] = 2
-        self.txt_63_6_rinovirus.pack(side=LEFT)
+        self.txt_c63_5_10 = Entry(self.container13)
+        self.txt_c63_5_10['width'] = 2
+        self.txt_c63_5_10.pack(side=LEFT)
 
-        self.lbl_63_6_outro = Label(self.container13)
-        self.lbl_63_6_outro['text'] = 'Outro vírus respiratório, especifique: '
-        self.lbl_63_6_outro.pack(side=LEFT)
+        self.lbl_c63_5_11 = Label(self.container13)
+        self.lbl_c63_5_11['text'] = 'Outro vírus respiratório, especifique: '
+        self.lbl_c63_5_11.pack(side=LEFT)
 
-        self.txt_63_6_outro = Entry(self.container13)
-        self.txt_63_6_outro['width'] = 10
-        self.txt_63_6_outro.pack(side=LEFT)
+        self.txt_c63_5_11 = Entry(self.container13)
+        self.txt_c63_5_11['width'] = 10
+        self.txt_c63_5_11.pack(side=LEFT)
 
         self.container14 = Frame(dados_laboratoriais)
         self.container14['padx'] = 10
         self.container14['pady'] = 8
         self.container14.pack()
 
-        self.lbl_64_1 = Label(self.container14)
-        self.lbl_64_1['text'] = '64 - Laboratório que realizou RT-PCR/outro método por biologia molecular: '
-        self.lbl_64_1.pack(side=LEFT)
+        self.lbl_c64_1 = Label(self.container14)
+        self.lbl_c64_1['text'] = '64 - Laboratório que realizou RT-PCR/outro método por biologia molecular: '
+        self.lbl_c64_1.pack(side=LEFT)
 
-        self.txt_64_1 = Entry(self.container14)
-        self.txt_64_1['width'] = 25
-        self.txt_64_1.pack(side=LEFT)
+        self.txt_c64_1 = Entry(self.container14)
+        self.txt_c64_1['width'] = 25
+        self.txt_c64_1.pack(side=LEFT)
 
-        self.lbl_64_2 = Label(self.container14)
-        self.lbl_64_2['text'] = 'Código (CNES): '
-        self.lbl_64_2.pack(side=LEFT)
+        self.lbl_c64_2 = Label(self.container14)
+        self.lbl_c64_2['text'] = 'Código (CNES): '
+        self.lbl_c64_2.pack(side=LEFT)
 
-        self.txt_64_2 = Entry(self.container14)
-        self.txt_64_2['width'] = 15
-        self.txt_64_2.pack(side=LEFT)
+        self.txt_c64_2 = Entry(self.container14)
+        self.txt_c64_2['width'] = 15
+        self.txt_c64_2.pack(side=LEFT)
 
     def conclusao(self):
         conclusao_final = Toplevel(root)
@@ -824,73 +820,72 @@ class Application:
         self.container2['pady'] = 8
         self.container2.pack()
 
-        self.lbl_65_1 = Label(self.container2)
-        self.lbl_65_1['text'] = ('65 - Classificação final do caso) '+
+        self.lbl_c65 = Label(self.container2)
+        self.lbl_c65['text'] = ('65 - Classificação final do caso) '+
             '(1 - SRAG por influenza, 2 - SRAG por vírus respiratório, '+
             '3 - SRAG por outro agente etiológico (especifique), '+
             '4 - SRAG não especificado, 5 - COVID-19): ')
-        self.lbl_65_1.pack(side=LEFT)
+        self.lbl_c65.pack(side=LEFT)
 
-        self.txt_65_1 = Entry(self.container2)
-        self.txt_65_1['width'] = 15
-        self.txt_65_1.pack(side=LEFT)
+        self.txt_c65 = Entry(self.container2)
+        self.txt_c65['width'] = 15
+        self.txt_c65.pack(side=LEFT)
 
         self.container3 = Frame(conclusao_final)
         self.container3['padx'] = 10
         self.container3['pady'] = 8
         self.container3.pack()
 
-        self.lbl_66 = Label(self.container3)
-        self.lbl_66['text'] = ('66 - Critério de Encerramento: '+
+        self.lbl_c66 = Label(self.container3)
+        self.lbl_c66['text'] = ('66 - Critério de Encerramento: '+
             '(1 - Laboratorial, 2 - Vínculo-Epidemiológico, 3 - Clínico): ')
-        self.lbl_66.pack(side=LEFT)
+        self.lbl_c66.pack(side=LEFT)
 
-        self.txt_66 = Entry(self.container3)
-        self.txt_66['width'] = 2
-        self.txt_66.pack(side=LEFT)
+        self.txt_c66 = Entry(self.container3)
+        self.txt_c66['width'] = 2
+        self.txt_c66.pack(side=LEFT)
 
-        self.lbl_67 = Label(self.container3)
-        self.lbl_67['text'] = '67 - Evolução do caso: (1 - Cura, 2 - Óbito, 3 - Ignorado): '
-        self.lbl_67.pack(side=LEFT)
+        self.lbl_c67 = Label(self.container3)
+        self.lbl_c67['text'] = '67 - Evolução do caso: (1 - Cura, 2 - Óbito, 3 - Ignorado): '
+        self.lbl_c67.pack(side=LEFT)
 
-        self.txt_67 = Entry(self.container3)
-        self.txt_67['width'] = 2
-        self.txt_67.pack(side=LEFT)
+        self.txt_c67 = Entry(self.container3)
+        self.txt_c67['width'] = 2
+        self.txt_c67.pack(side=LEFT)
 
         self.container4 = Frame(conclusao_final)
         self.container4['padx'] = 10
         self.container4['pady'] = 8
         self.container4.pack()
 
-        self.lbl_68 = Label(self.container4)
-        self.lbl_68['text'] = 'Data de alta ou óbito'
-        self.lbl_68.pack(side=LEFT)
+        self.lbl_c68 = Label(self.container4)
+        self.lbl_c68['text'] = 'Data de alta ou óbito'
+        self.lbl_c68.pack(side=LEFT)
 
-        self.txt_68 = Entry(self.container4)
-        self.txt_68['width'] = 8
-        self.txt_68.pack(side=LEFT)
+        self.txt_c68 = Entry(self.container4)
+        self.txt_c68['width'] = 8
+        self.txt_c68.pack(side=LEFT)
 
-        self.lbl_69 = Label(self.container4)
-        self.lbl_69['text'] = 'Data do encerramento'
-        self.lbl_69.pack(side=LEFT)
+        self.lbl_c69 = Label(self.container4)
+        self.lbl_c69['text'] = 'Data do encerramento'
+        self.lbl_c69.pack(side=LEFT)
         
-        self.txt_69 = Entry(self.container4)
-        self.txt_69['width'] = 8
-        self.txt_69.pack(side=LEFT)
+        self.txt_c69 = Entry(self.container4)
+        self.txt_c69['width'] = 8
+        self.txt_c69.pack(side=LEFT)
 
         self.container5 = Frame(conclusao_final)
         self.container5['padx'] = 10
         self.container5['pady'] = 8
         self.container5.pack()
 
-        self.lbl_70 = Label(self.container5)
-        self.lbl_70['text'] = 'Observações'
-        self.lbl_70.pack(side=LEFT)
+        self.lbl_c70 = Label(self.container5)
+        self.lbl_c70['text'] = 'Observações'
+        self.lbl_c70.pack(side=LEFT)
 
-        self.txt_70 = Entry(self.container5)
-        self.txt_70.pack(side=LEFT)
+        self.txt_c70 = Entry(self.container5)
+        self.txt_c70.pack(side=LEFT)
 
-# João Pedro
 
     def cadastrarUsuario(self):
         user = Usuarios()
