@@ -209,10 +209,10 @@ class Application:
         self.container9["pady"] = 8
         self.container9.pack()
 
-        self.titulo = Label(self.container1, text="Preenchimento de Ficha SIVEP", font=("Calibri", "15", "bold"))
+                self.titulo = Label(self.container1, text="Preenchimento de Ficha SIVEP", font=("Calibri", "15", "bold"))
         self.titulo.pack()
 
-        self.lblc1 = Label(self.container2, text="Data de preenchimento: ", font=self.fonte)
+        self.lblc1 = Label(self.container2, text="1 - Data de preenchimento: ", font=self.fonte)
         self.lblc1.pack(side=LEFT)
 
         self.txtc1 = Entry(self.container2)
@@ -220,7 +220,7 @@ class Application:
         self.txtc1["width"] = 10
         self.txtc1.pack(side=LEFT)
 
-        self.lblc2 = Label(self.container2, text=" Data dos primeiros sintomas: ", font=self.fonte)
+        self.lblc2 = Label(self.container2, text="2 - Data dos primeiros sintomas: ", font=self.fonte)
         self.lblc2.pack(side=LEFT)
 
         self.txtc2 = Entry(self.container2)
@@ -228,7 +228,7 @@ class Application:
         self.txtc2["width"] = 10
         self.txtc2.pack(side=LEFT)
 
-        self.lblc3 = Label(self.container2, text=" UF: ", font=self.fonte)
+        self.lblc3 = Label(self.container2, text="3 - UF: ", font=self.fonte)
         self.lblc3.pack(side=LEFT)
 
         self.txtc3 = Entry(self.container2)
@@ -236,7 +236,7 @@ class Application:
         self.txtc3["width"] = 2
         self.txtc3.pack(side=LEFT)
 
-        self.lblc4 = Label(self.container2, text="Município: ", font=self.fonte)
+        self.lblc4 = Label(self.container2, text="4 - Município: ", font=self.fonte)
         self.lblc4.pack(side=LEFT)
 
         self.txtc4 = Entry(self.container2)
@@ -244,7 +244,7 @@ class Application:
         self.txtc4["width"] = 20
         self.txtc4.pack(side=LEFT)
 
-        self.lblc5 = Label(self.container2, text="Código(IBGE): ", font=self.fonte)
+        self.lblc5 = Label(self.container2, text=" Código(IBGE): ", font=self.fonte)
         self.lblc5.pack(side=LEFT)
 
         self.txtc5 = Entry(self.container2)
@@ -252,7 +252,7 @@ class Application:
         self.txtc5["width"] = 13
         self.txtc5.pack(side=LEFT)
 
-        self.lblc6 = Label(self.container2, text="Unidade de Saúde: ", font=self.fonte)
+        self.lblc6 = Label(self.container2, text="5 - Unidade de Saúde: ", font=self.fonte)
         self.lblc6.pack(side=LEFT)
 
         self.txtc6 = Entry(self.container2)
@@ -271,7 +271,15 @@ class Application:
         self.dados_pessoais = Label(self.container3, text="Dados do Paciente", font=("Calibri", "12", "bold"))
         self.dados_pessoais.pack()
 
-        self.lblc8 = Label(self.container4, text="Nome: ", font=self.fonte)
+        self.lblCPF = Label(self.container4, text="6 - CPF: ", font=self.fonte)
+        self.lblCPF.pack(side=LEFT)
+
+        self.txtCPF = Entry(self.container4)
+        self.txtCPF["font"] = self.fonte
+        self.txtCPF["width"] = 20
+        self.txtCPF.pack(side=LEFT)
+
+        self.lblc8 = Label(self.container4, text="7 - Nome: ", font=self.fonte)
         self.lblc8.pack(side=LEFT)
 
         self.txtc8 = Entry(self.container4)
@@ -279,15 +287,15 @@ class Application:
         self.txtc8["width"] = 25
         self.txtc8.pack(side=LEFT)
 
-        self.lblc9 = Label(self.container4, text=" Sexo(M/F/N.D): ", font=self.fonte)
+        self.lblc9 = Label(self.container4, text="8 - Sexo(1-M/2-F/9-Ignorar): ", font=self.fonte)
         self.lblc9.pack(side=LEFT)
 
-        self.txtc9= Entry(self.container4)
+        self.txtc9 = Entry(self.container4)
         self.txtc9["font"] = self.fonte
         self.txtc9["width"] = 3
         self.txtc9.pack(side=LEFT)
 
-        self.lblc10 = Label(self.container4, text=" Data de Nascimento: ", font=self.fonte)
+        self.lblc10 = Label(self.container4, text="9 -  Data de Nascimento: ", font=self.fonte)
         self.lblc10.pack(side=LEFT)
 
         self.txtc10 = Entry(self.container4)
@@ -295,39 +303,60 @@ class Application:
         self.txtc10["width"] = 10
         self.txtc10.pack(side=LEFT)
 
-        self.lblc11 = Label(self.container4, text=" Gestante(com tempo): ", font=self.fonte)
+        self.lblIdade_1 = Label(self.container4, text="10 - (ou)Idade ", font=self.fonte)
+        self.lblIdade_1.pack(side=LEFT)
+
+        self.txtIdade_1 = Entry(self.container4)
+        self.txtIdade_1["font"] = self.fonte
+        self.txtIdade_1["width"] = 3
+        self.txtIdade_1.pack(side=LEFT)
+
+        self.lblIdade_2 = Label(self.container4, text="1 - Dia, 2- Mês, 3- Ano ", font=self.fonte)
+        self.lblIdade_2.pack(side=LEFT)
+
+        self.txtIdade_2 = Entry(self.container4)
+        self.txtIdade_2["font"] = self.fonte
+        self.txtIdade_2["width"] = 2
+        self.txtIdade_2.pack(side=LEFT)
+
+        self.lblc11 = Label(self.container4, text="11 - Gestante(1 - 1ºTrimerstre, 2-2ºTrimestre, 3-3ºTrimestre "
+                                                  "\n 4-Idade gestacional ignorada), 5-Não \n6-Não se aplica, "
+                                                  "9-Ignorado: ", font=self.fonte)
         self.lblc11.pack(side=LEFT)
 
         self.txtc11 = Entry(self.container4)
         self.txtc11["font"] = self.fonte
-        self.txtc11["width"] = 10
+        self.txtc11["width"] = 2
         self.txtc11.pack(side=LEFT)
 
-        self.lblc12 = Label(self.container4, text=" Raça/Cor: ", font=self.fonte)
+        self.lblc12 = Label(self.container5, text="12 - Raça/Cor (1-Branca, 2-Preta, 3-Amarela\n"
+                                                  "4-Parda, 5-Indígena, 9-Ignorado): ", font=self.fonte)
         self.lblc12.pack(side=LEFT)
 
-        self.txtc12 = Entry(self.container4)
+        self.txtc12 = Entry(self.container5)
         self.txtc12["font"] = self.fonte
         self.txtc12["width"] = 10
         self.txtc12.pack(side=LEFT)
 
-        self.lblc13 = Label(self.container4, text=" Se indígena, etnia: ", font=self.fonte)
+        self.lblc13 = Label(self.container5, text="13 - Se indígena, etnia: ", font=self.fonte)
         self.lblc13.pack(side=LEFT)
 
-        self.txtc13 = Entry(self.container4)
+        self.txtc13 = Entry(self.container5)
         self.txtc13["font"] = self.fonte
         self.txtc13["width"] = 20
         self.txtc13.pack(side=LEFT)
 
-        self.lblc14 = Label(self.container5, text=" Escolaridade: ", font=self.fonte)
+        self.lblc14 = Label(self.container5, text="14 - Escolaridade (0-Sem Escolaridade/Analfabeto\n"
+                                                  "1-Fundamental I, 2-Fundamental II, 3-Médio,\n"
+                                                  "4-Superior, 5-Não se Aplica, 9-Ignorado): ", font=self.fonte)
         self.lblc14.pack(side=LEFT)
 
         self.txtc14 = Entry(self.container5)
         self.txtc14["font"] = self.fonte
-        self.txtc14["width"] = 20
+        self.txtc14["width"] = 2
         self.txtc14.pack(side=LEFT)
 
-        self.lblc15 = Label(self.container5, text=" Ocupação: ", font=self.fonte)
+        self.lblc15 = Label(self.container5, text="15 - Ocupação: ", font=self.fonte)
         self.lblc15.pack(side=LEFT)
 
         self.txtc15 = Entry(self.container5)
@@ -335,7 +364,7 @@ class Application:
         self.txtc15["width"] = 20
         self.txtc15.pack(side=LEFT)
 
-        self.lblc16 = Label(self.container5, text=" Nome da mãe: ", font=self.fonte)
+        self.lblc16 = Label(self.container5, text="16 - Nome da mãe: ", font=self.fonte)
         self.lblc16.pack(side=LEFT)
 
         self.txtc16 = Entry(self.container5)
@@ -346,7 +375,7 @@ class Application:
         self.dados_residencia = Label(self.container6, text="Dados de Residência", font=("Calibri", "12", "bold"))
         self.dados_residencia.pack()
 
-        self.lblc17 = Label(self.container7, text="CEP: ", font=self.fonte)
+        self.lblc17 = Label(self.container7, text="17 - CEP: ", font=self.fonte)
         self.lblc17.pack(side=LEFT)
 
         self.txtc17 = Entry(self.container7)
@@ -354,7 +383,7 @@ class Application:
         self.txtc17["width"] = 15
         self.txtc17.pack(side=LEFT)
 
-        self.lblc18 = Label(self.container7, text=" UF: ", font=self.fonte)
+        self.lblc18 = Label(self.container7, text="18 - UF: ", font=self.fonte)
         self.lblc18.pack(side=LEFT)
 
         self.txtc18 = Entry(self.container7)
@@ -362,7 +391,7 @@ class Application:
         self.txtc18["width"] = 2
         self.txtc18.pack(side=LEFT)
 
-        self.lblc19 = Label(self.container7, text=" Município: ", font=self.fonte)
+        self.lblc19 = Label(self.container7, text="19 - Município: ", font=self.fonte)
         self.lblc19.pack(side=LEFT)
 
         self.txtc19 = Entry(self.container7)
@@ -378,7 +407,7 @@ class Application:
         self.txtc20["width"] = 13
         self.txtc20.pack(side=LEFT)
 
-        self.lblc21 = Label(self.container7, text=" Bairro: ", font=self.fonte)
+        self.lblc21 = Label(self.container7, text="20 - Bairro: ", font=self.fonte)
         self.lblc21.pack(side=LEFT)
 
         self.txtc21 = Entry(self.container7)
@@ -386,7 +415,7 @@ class Application:
         self.txtc21["width"] = 20
         self.txtc21.pack(side=LEFT)
 
-        self.lblc22 = Label(self.container7, text=" Logradouro: ", font=self.fonte)
+        self.lblc22 = Label(self.container7, text="21 - Logradouro: ", font=self.fonte)
         self.lblc22.pack(side=LEFT)
 
         self.txtc22 = Entry(self.container7)
@@ -394,7 +423,7 @@ class Application:
         self.txtc22["width"] = 20
         self.txtc22.pack(side=LEFT)
 
-        self.lblc23 = Label(self.container7, text=" Nº: ", font=self.fonte)
+        self.lblc23 = Label(self.container7, text="22 - Nº: ", font=self.fonte)
         self.lblc23.pack(side=LEFT)
 
         self.txtc23 = Entry(self.container7)
@@ -402,7 +431,7 @@ class Application:
         self.txtc23["width"] = 4
         self.txtc23.pack(side=LEFT)
 
-        self.lblc24 = Label(self.container7, text=" Complemento: ", font=self.fonte)
+        self.lblc24 = Label(self.container7, text="23 - Complemento: ", font=self.fonte)
         self.lblc24.pack(side=LEFT)
 
         self.txtc24 = Entry(self.container7)
@@ -410,7 +439,7 @@ class Application:
         self.txtc24["width"] = 15
         self.txtc24.pack(side=LEFT)
 
-        self.lblc25 = Label(self.container8, text="Telefone(DDD): ", font=self.fonte)
+        self.lblc25 = Label(self.container8, text="24 - Telefone(DDD): ", font=self.fonte)
         self.lblc25.pack(side=LEFT)
 
         self.txtc25 = Entry(self.container8)
@@ -418,15 +447,16 @@ class Application:
         self.txtc25["width"] = 15
         self.txtc25.pack(side=LEFT)
 
-        self.lblc26 = Label(self.container8, text=" Zona: ", font=self.fonte)
+        self.lblc26 = Label(self.container8, text="25 - Zona(1-Urbana, 2-Rural\n"
+                                                  "3-Periurbana, 9-Ignorado): ", font=self.fonte)
         self.lblc26.pack(side=LEFT)
 
         self.txtc26 = Entry(self.container8)
         self.txtc26["font"] = self.fonte
-        self.txtc26["width"] = 20
+        self.txtc26["width"] = 2
         self.txtc26.pack(side=LEFT)
 
-        self.lblc27 = Label(self.container8, text=" País(se residente fora do Brasil): ", font=self.fonte)
+        self.lblc27 = Label(self.container8, text="26 - País(se residente fora do Brasil): ", font=self.fonte)
         self.lblc27.pack(side=LEFT)
 
         self.txtc27 = Entry(self.container8)
