@@ -13,9 +13,8 @@ class LoginDB:
         c = self.conexao.cursor()
 
         c.execute("""create table if not exists login (
-                    idusuario integer primary key autoincrement,
                     usuario text,
-                    senha text
+                    senha text,
                     nome text,
                     crm text)""")
         self.conexao.commit()
