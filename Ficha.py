@@ -47,6 +47,7 @@ class Ficha(object):
         self.c17 = c17
         self.c18 = c18        
         self.c19_1 = c19_1
+        self.c19_2 = c19_2
         self.c20 = c20
         self.c21 = c21        
         self.c22 = c22
