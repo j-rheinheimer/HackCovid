@@ -209,7 +209,7 @@ class Application:
         self.container9["pady"] = 8
         self.container9.pack()
 
-                self.titulo = Label(self.container1, text="Preenchimento de Ficha SIVEP", font=("Calibri", "15", "bold"))
+        self.titulo = Label(self.container1, text="Preenchimento de Ficha SIVEP", font=("Calibri", "15", "bold"))
         self.titulo.pack()
 
         self.lblc1 = Label(self.container2, text="1 - Data de preenchimento: ", font=self.fonte)
