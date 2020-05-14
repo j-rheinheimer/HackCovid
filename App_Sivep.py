@@ -104,8 +104,6 @@ class Application:
 
         janela_de_cadastro = Toplevel(root)
         janela_de_cadastro.title("Sivep Cadastro")
-	w = Scrollbar(janela_da_ficha)
-	w.pack(side=RIGHT, fill=Y) 
 
         self.container1 = Frame(janela_de_cadastro)
         self.container1["pady"] = 10
@@ -172,8 +170,11 @@ class Application:
         self.btnCadastrar.pack()
 
     def janelaFicha(self):
-        janela_da_ficha = Toplevel(root)
+        
+	janela_da_ficha = Toplevel(root)
         janela_da_ficha.title("Sivep Ficha")
+	w = Scrollbar(janela_da_ficha)
+	w.pack(side=RIGHT, fill=Y) 
 
         self.container1 = Frame(janela_da_ficha)
         self.container1["pady"] = 10
