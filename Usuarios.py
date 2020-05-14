@@ -20,6 +20,7 @@ class Usuarios(object):
             c = banco.conexao.cursor()
 
             c.execute("insert into login (usuario, senha, nome, crm) values ( '" + self.usuario + "', '" + self.senha + "', '" + self.nome + "', '" + self.crm + "')")
+
             banco.conexao.commit()
             c.close()
 
