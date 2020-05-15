@@ -23,7 +23,7 @@ class FichaDB:
                      c32 text, c33 text, c34 text, c35_1 text, c35_2 text,
                      c35_3 text, c35_4 text, c35_5 text, c35_6 text, c35_7 text,
                      c35_8 text, c35_9 text, c35_10 text, c36_1 text, c36_2 text,
-                     c36_3 text, c36_4 text, c36_5 text, c36_6_1 text, c36_6_2 text,
+                     c36_3 text, c36_4 text, c36_5 text, c36_6 text,
                      c36_7 text, c36_8 text, c36_9 text, c36_10 text, c36_11 text,
                      c36_12 text, c36_13 text, c36_14_1 text, c36_14_2 text,
                      c37 text, c38_1 text, c38_2 text, c38_3 text, c38_4 text,
@@ -33,11 +33,10 @@ class FichaDB:
                      c51_2 text, c52 text, c53 text, c54 text, c55_1 text, c55_2 text, c56 text,
                      c57 text, c58 text, c59_1 text, c59_2 text, c59_3 text, c59_4 text, c59_5 text, c59_6 text,
                      c59_7 text, c59_8 text, c59_9 text, c59_10 text, c60_1 text, c60_2 text, c61 text, c62 text,
-                     c63_1_1 text, c63_1_2 text, c63_2text,c63_3 text, c63_4 text, c63_5_1 text,
+                     c63_1_1 text, c63_1_2 text, c63_2 text,c63_3 text, c63_4 text, c63_5_1 text,
                      c63_5_2, c63_5_3 text, c63_5_4 text, c63_5_5 text, c63_5_6 text, c63_5_7 text, c63_5_8 text, 
                      c63_5_9 text, c63_5_10 text,c63_5_11 text, c64_1 text, c64_2 text, c65 text,c66 text,
                      c67 text, c68 text, c69 text, c70 text, c71 text, c72 text)""")
 
         self.conexao.commit()
         c.close()
-
