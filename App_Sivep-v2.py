@@ -196,10 +196,6 @@ class Application:
         self.lblmsg = Label(self.container1, text="", font=self.fonte)
         self.lblmsg.pack(side=TOP)
 
-        self.btnCadastrarFicha = Button(self.container1, text = "Cadastrar", font=self.fonte)
-        self.btnCadastrarFicha["command"] = self.cadastraFicha
-        self.btnCadastrarFicha.pack(side=TOP)
-
         self.container2 = Frame(janela_dados_paciente)
         self.container2["padx"] = 20
         self.container2["pady"] = 8
@@ -424,10 +420,11 @@ class Application:
         self.proxima_janela = Button(self.container_extra3)
         self.proxima_janela['text'] = 'Clique para ir para a próxima janela'
         self.proxima_janela['command'] = self.dadosResidencia
+        self.proxima_janela.pack()
 
     def dadosResidencia(self):
         janela_dados_residencia = Toplevel(root)
-        janela_dados_residencia.title("Sivep Ficha")
+        janela_dados_residencia.title("Sivep Ficha") 
 
         self.dados_de_residencia = []
 
@@ -558,6 +555,7 @@ class Application:
         self.proxima_janela = Button(self.container_extra4)
         self.proxima_janela['text'] = 'Clique para ir para a próxima janela'
         self.proxima_janela['command'] = self.janela_dadosClinicos
+        self.proxima_janela.pack()
 
     def janela_dadosClinicos(self):
         janela_dados_clinicos = Toplevel(root)
@@ -1144,6 +1142,7 @@ class Application:
         self.proxima_janela = Button(self.container_extra5)
         self.proxima_janela['text'] = 'Clique para ir para a próxima janela'
         self.proxima_janela['command'] = self.janela_dadosAtendimentos
+        self.proxima_janela.pack()
 
     def janela_dadosAtendimento(self):
         janela_dados_atendimento = Toplevel(root)
@@ -1393,14 +1392,15 @@ class Application:
         self.txtc55.pack(side=LEFT)
         self.dados_atendimento.append(self.txtc55)
 
-        self.container_extra5 = Frame(janela_dados_atendimento)
-        self.container_extra5["padx"] = 20
-        self.container_extra5["pady"] = 8
-        self.container_extra5.pack()
+        self.container_extra6 = Frame(janela_dados_atendimento)
+        self.container_extra6["padx"] = 20
+        self.container_extra6["pady"] = 8
+        self.container_extra6.pack()
 
         self.proxima_janela = Button(self.container_extra5)
         self.proxima_janela['text'] = 'Clique para ir para a próxima janela'
         self.proxima_janela['command'] = self.janela_dadosLaboratoriais
+        self.proxima_janela.pack()
 
     def janela_dadosLaboratoriais(self):
         janela_dados_laboratoriais = Toplevel(root)
@@ -1808,14 +1808,15 @@ class Application:
         self.txtc64_2.pack(side=LEFT)
         self.dados_laboratoriais.append(self.txtc64_2)
 
-        self.container_extra6 = Frame(janela_dados_laboratoriais)
-        self.container_extra6["padx"] = 20
-        self.container_extra6["pady"] = 8
-        self.container_extra6.pack()
+        self.container_extra7 = Frame(janela_dados_laboratoriais)
+        self.container_extra7["padx"] = 20
+        self.container_extra7["pady"] = 8
+        self.container_extra7.pack()
 
         self.proxima_janela = Button(self.container_extra6)
         self.proxima_janela['text'] = 'Clique para ir para a próxima janela'
         self.proxima_janela['command'] = self.janela_Conclusao
+        self.proxima_janela.pack()
 
     def janela_Conclusao(self):
         janela_dados_conclusao = Toplevel(root)
@@ -1910,14 +1911,14 @@ class Application:
         self.txtc70.pack(side=LEFT)
         self.dados_conclusao.append(self.txtc70)
 
-        # self.container_extra7 = Frame(janela_dados_conclusao)
-        # self.container_extra7["padx"] = 20
-        # self.container_extra7["pady"] = 8
-        # self.container_extra7.pack()
+        # self.container_extra8 = Frame(janela_dados_conclusao)
+        # self.container_extra8["padx"] = 20
+        # self.container_extra8["pady"] = 8
+        # self.container_extra8.pack()
 
-        # self.proxima_janela = Button(self.container_extra7)
-        # self.proxima_janela['text'] = 'Clique para cadastrar a ficha'
-        # self.proxima_janela['command'] = self.
+        # self.cadastrar = Button(self.container_extra7)
+        # self.cadastrar['text'] = 'Clique para cadastrar a ficha'
+        # self.cadastrar['command'] = self.
 
     def cadastrarUsuario(self):
         user = Usuarios()
