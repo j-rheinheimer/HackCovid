@@ -7,8 +7,6 @@ from Ficha import *
 
 class Application:
 
-    # Mateus Corradini
-
     def __init__(self, master=None):
         self.fonte = ("Verdana", "10")
 
