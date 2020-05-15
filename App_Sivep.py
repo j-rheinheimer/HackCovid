@@ -171,6 +171,9 @@ class Application:
         janela_da_ficha = Toplevel(root)
         janela_da_ficha.title("Sivep Ficha")
 
+        scrollbar = Scrollbar(janela_da_ficha)
+        scrollbar.pack()
+
         self.fontePadrao = ("Verdana", "10")
         self.fonteTitulo = ("Verdana", "12", "bold")
 

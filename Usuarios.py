@@ -13,16 +13,12 @@ class Usuarios(object):
         self.crm = crm
 
     def insertUser(self):
-
         banco = LoginDB()
         try:
 
             c = banco.conexao.cursor()
 
-            c.execute(" insert into login (usuario, senha, nome, crm) values ("
-                "('" + self.usuario + "'), ('" + self.senha + "'), "
-                "('" + self.nome + "'), ('" + self.crm + "')"
-                )
+            c.execute("insert into login (usuario, senha, nome, crm) values ('" + self.usuario + "', '" + self.senha + "', '" + self.nome + "', '" + self.crm + "')")
 
             banco.conexao.commit()
             c.close()
