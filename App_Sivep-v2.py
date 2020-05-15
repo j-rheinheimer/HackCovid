@@ -568,9 +568,9 @@ class Application:
         self.container9["pady"] = 8
         self.container9.pack()
 
-        self.dados_clinicos = Label(self.container9, text="Dados clínicos e epidemiológicos")
-        self.dados_clinicos["font"] = self.fonte_titulo
-        self.dados_clinicos.pack()
+        self.title_dados_clinicos = Label(self.container9, text="Dados clínicos e epidemiológicos")
+        self.title_dados_clinicos["font"] = self.fonte_titulo
+        self.title_dados_clinicos.pack()
 
         self.container10 = Frame(janela_dados_clinicos)
         self.container10["padx"] = 20
@@ -1134,14 +1134,14 @@ class Application:
         self.lblc38_7_2["font"] = self.fonte
         self.lblc38_7_2.pack(side=LEFT)
 
-        self.container_extra5 = Frame(janela_dadosClinicos)
+        self.container_extra5 = Frame(janela_dados_clinicos)
         self.container_extra5["padx"] = 20
         self.container_extra5["pady"] = 8
         self.container_extra5.pack()
 
         self.proxima_janela = Button(self.container_extra5)
         self.proxima_janela['text'] = 'Clique para ir para a próxima janela'
-        self.proxima_janela['command'] = self.janela_dadosAtendimentos
+        self.proxima_janela['command'] = self.janela_dadosAtendimento
         self.proxima_janela.pack()
 
     def janela_dadosAtendimento(self):
@@ -1155,9 +1155,9 @@ class Application:
         self.container29["pady"] = 8
         self.container29.pack()
 
-        self.dados_atendimento = Label(self.container29, text="Dados de Atendimento")
-        self.dados_atendimento["font"] = self.fonteTitulo
-        self.dados_atendimento.pack()
+        self.title_dados_atendimento = Label(self.container29, text="Dados de Atendimento")
+        self.title_dados_atendimento["font"] = self.fonteTitulo
+        self.title_dados_atendimento.pack()
 
         self.container30 = Frame(janela_dados_atendimento)
         self.container30["padx"] = 20
@@ -1397,7 +1397,7 @@ class Application:
         self.container_extra6["pady"] = 8
         self.container_extra6.pack()
 
-        self.proxima_janela = Button(self.container_extra5)
+        self.proxima_janela = Button(self.container_extra6)
         self.proxima_janela['text'] = 'Clique para ir para a próxima janela'
         self.proxima_janela['command'] = self.janela_dadosLaboratoriais
         self.proxima_janela.pack()
@@ -1813,7 +1813,7 @@ class Application:
         self.container_extra7["pady"] = 8
         self.container_extra7.pack()
 
-        self.proxima_janela = Button(self.container_extra6)
+        self.proxima_janela = Button(self.container_extra7)
         self.proxima_janela['text'] = 'Clique para ir para a próxima janela'
         self.proxima_janela['command'] = self.janela_Conclusao
         self.proxima_janela.pack()
@@ -1911,14 +1911,27 @@ class Application:
         self.txtc70.pack(side=LEFT)
         self.dados_conclusao.append(self.txtc70)
 
-        # self.container_extra8 = Frame(janela_dados_conclusao)
-        # self.container_extra8["padx"] = 20
-        # self.container_extra8["pady"] = 8
-        # self.container_extra8.pack()
+        self.container_extra8 = Frame(janela_dados_conclusao)
+        self.container_extra8["padx"] = 20
+        self.container_extra8["pady"] = 8
+        self.container_extra8.pack()
 
-        # self.cadastrar = Button(self.container_extra7)
-        # self.cadastrar['text'] = 'Clique para cadastrar a ficha'
-        # self.cadastrar['command'] = self.
+        self.lista = concatena_lista
+
+        self.cadastrar = Button(self.container_extra8)
+        self.cadastrar['text'] = 'Clique para cadastrar a ficha'
+        self.cadastrar['command'] = self.cadastraFicha(lista)
+        self.cadastrar.pack()
+
+        self.container_extra9 = Frame(janela_dados_conclusao)
+        self.container_extra9["padx"] = 20
+        self.container_extra9["pady"] = 8
+        self.container_extra9.pack()
+
+    def concatena_lista(self):
+        self.lista = (self.dados_do_paciente + self.dados_de_residencia + self.dados_clinicos + 
+        self.dados_atendimento + self.dados_laboratoriai +self. dados_conclusao)
+        return self.lista
 
     def cadastrarUsuario(self):
         user = Usuarios()
@@ -2002,140 +2015,13 @@ class Application:
         else:
             return
 
-    def cadastraFicha(self):
-           ficha = Ficha()
+    def cadastraFicha(self, lista):
+        ficha = Ficha(lista)
 
-           ficha.c1 = self.txtc1.get()
-           ficha.c2 = self.txtc2.get()
-           ficha.c3 = self.txtc3.get()
-           ficha.c4_1 = self.txtc4_1.get()
-           ficha.c4_2 = self.txtc4_2.get()
-           ficha.c5_1 = self.txtc5_1.get()
-           ficha.c5_2 = self.txtc5_2.get()
-           ficha.c6 = self.txtc6.get()
-           ficha.c7 = self.txtc7.get()
-           ficha.c8 = self.txtc8.get()
-           ficha.c9 = self.txtc9.get()
-           ficha.c10_1 = self.txtc10_1.get()
-           ficha.c10_2 = self.txtc10_2.get()
-           ficha.c11 = self.txtc11.get()
-           ficha.c12 = self.txtc12.get()
-           ficha.c13 = self.txtc13.get()
-           ficha.c14 = self.txtc14.get()
-           ficha.c15 = self.txtc15.get()
-           ficha.c16 = self.txtc16.get()
-           ficha.c17 = self.txtc17.get()
-           ficha.c18 = self.txtc18.get()
-           ficha.c19_1 = self.txtc19_1.get()
-           ficha.c19_2 = self.txtc19_2.get()
-           ficha.c20 = self.txtc20.get()
-           ficha.c21 = self.txtc21.get()
-           ficha.c22 = self.txtc22.get()
-           ficha.c23 = self.txtc23.get()
-           ficha.c24 = self.txtc24.get()
-           ficha.c25 = self.txtc25.get()
-           ficha.c26 = self.txtc26.get()
-           ficha.c27 = self.txtc27.get()
-           ficha.c28 = self.txtc28.get()
-           ficha.c29 = self.txtc29.get()
-           ficha.c30 = self.txtc30.get()
-           ficha.c31 = self.txtc31.get()
-           ficha.c32 = self.txtc32.get()
-           ficha.c33 = self.txtc33.get()
-           ficha.c34 = self.txtc34.get()
-           ficha.c35_1 = self.txtc35_1.get()
-           ficha.c35_2 = self.txtc35_2.get()
-           ficha.c35_3 = self.txtc35_3.get()
-           ficha.c35_4 = self.txtc35_4.get()
-           ficha.c35_5 = self.txtc35_5.get()
-           ficha.c35_6 = self.txtc35_6.get()
-           ficha.c35_7 = self.txtc35_7.get()
-           ficha.c35_8 = self.txtc35_8.get()
-           ficha.c35_9 = self.txtc35_9.get()
-           ficha.c36_1 = self.txtc36_1.get()
-           ficha.c36_2 = self.txtc36_2.get()
-           ficha.c36_3 = self.txtc36_3.get()
-           ficha.c36_4 = self.txtc36_4.get()
-           ficha.c36_5 = self.txtc36_5.get()
-           ficha.c36_6 = self.txtc36_6.get()
-           ficha.c36_7 = self.txtc36_7.get()
-           ficha.c36_8 = self.txtc36_8.get()
-           ficha.c36_9 = self.txtc36_9.get()
-           ficha.c36_10 = self.txtc36_10.get()
-           ficha.c36_11 = self.txtc36_11.get()
-           ficha.c36_12 = self.txtc36_12.get()
-           ficha.c36_13 = self.txtc36_13.get()
-           ficha.c36_14_1 = self.txtc36_14_1.get()
-           ficha.c36_14_1 = self.txtc36_14_1.get()
-           ficha.c37 = self.txtc37.get()
-           ficha.c38_1 = self.txtc38_1.get()
-           ficha.c38_2 = self.txtc38_2.get()
-           ficha.c38_3 = self.txtc38_3.get()
-           ficha.c38_4 = self.txtc38_4.get()
-           ficha.c38_5 = self.txtc38_5.get()
-           ficha.c38_6 = self.txtc38_6.get()
-           ficha.c38_7 = self.txtc38_7.get()
-           ficha.c39 = self.txtc39.get()
-           ficha.c40 = self.txtc40.get()
-           ficha.c41 = self.txtc41.get()
-           ficha.c42 = self.txtc42.get()
-           ficha.c43 = self.txtc43.get()
-           ficha.c44 = self.txtc44.get()
-           ficha.c45_1 = self.txtc45_1.get()
-           ficha.c45_2 = self.txtc45_2.get()
-           ficha.c46_1 = self.txtc46_1.get()
-           ficha.c46_2 = self.txtc46_2.get()
-           ficha.c47 = self.txtc47.get()
-           ficha.c48 = self.txtc48.get()
-           ficha.c49 = self.txtc49.get()
-           ficha.c50 = self.txtc50.get()
-           ficha.c51 = self.txtc51.get()
-           ficha.c52 = self.txtc52.get()
-           ficha.c53 = self.txtc53.get()
-           ficha.c54 = self.txtc54.get()
-           ficha.c55 = self.txtc55.get()
-           ficha.c56 = self.txtc56.get()
-           ficha.c57 = self.txtc57.get()
-           ficha.c58 = self.txtc58.get()
-           ficha.c59_1 = self.txtc59_1.get()
-           ficha.c59_2 = self.txtc59_2.get()
-           ficha.c59_3 = self.txtc59_3.get()
-           ficha.c59_4 = self.txtc59_4.get()
-           ficha.c59_5 = self.txtc59_5.get()
-           ficha.c59_6 = self.txtc59_6.get()
-           ficha.c59_7 = self.txtc59_7.get()
-           ficha.c59_8 = self.txtc59_8.get()
-           ficha.c59_9 = self.txtc59_9.get()
-           ficha.c60_1 = self.txtc60_1.get()
-           ficha.c60_2 = self.txtc60_2.get()
-           ficha.c61 = self.txtc61.get()
-           ficha.c62 = self.txtc62.get()
-           ficha.c63_1_1 = self.txtc63_1_1.get()
-           ficha.c63_1_2 = self.txtc63_1_2.get()
-           ficha.c63_2 = self.txtc63_2.get()
-           ficha.c63_3 = self.txtc63_3.get()
-           ficha.c63_4 = self.txtc63_4.get()
-           ficha.c63_5_1 = self.txtc63_5_1.get()
-           ficha.c63_5_2 = self.txtc63_5_2.get()
-           ficha.c63_5_3 = self.txtc63_5_3.get()
-           ficha.c63_5_4 = self.txtc63_5_4.get()
-           ficha.c63_5_5 = self.txtc63_5_5.get()
-           ficha.c63_5_6 = self.txtc63_5_6.get()
-           ficha.c63_5_7 = self.txtc63_5_7.get()
-           ficha.c63_5_8 = self.txtc63_5_8.get()
-           ficha.c63_5_9 = self.txtc63_5_9.get()
-           ficha.c63_5_10 = self.txtc63_5_10.get()
-           ficha.c63_5_11 = self.txtc63_5_11.get()
-           ficha.c64_1 = self.txtc64_1.get()
-           ficha.c64_2 = self.txtc64_2.get()
-           ficha.c65 = self.txtc65.get()
-           ficha.c66 = self.txtc66.get()
-           ficha.c67 = self.txtc67.get()
-           ficha.c68 = self.txtc68.get()
-           ficha.c69 = self.txtc69.get()
-           ficha.c70 = self.txtc70.get()
+        for c in range(0, 130):
+            ficha.lista[c] = lista[c]
 
-           self.lblmsg["text"] = ficha.insertFicha()
+        self.lblmsg["text"] = ficha.insertFicha()
 
 
 root = Tk()
