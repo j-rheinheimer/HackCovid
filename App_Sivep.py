@@ -1736,7 +1736,7 @@ class Application:
         self.txtusuario.insert(INSERT, user.usuario)
 
         self.txtsenha.delete(0, END)
-        self.txtsenha.insert(INSERT, user.senha)
+        #self.txtsenha.insert(INSERT, user.senha)
 
         self.txtnome.delete(0, END)
         self.txtnome.insert(INSERT, user.nome)
