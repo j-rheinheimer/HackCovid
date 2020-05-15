@@ -13,26 +13,32 @@ class Application:
         self.container1 = Frame(master)
         self.container1["pady"] = 10
         self.container1.pack()
+
         self.container2 = Frame(master)
         self.container2["padx"] = 20
         self.container2["pady"] = 5
         self.container2.pack()
+
         self.container4 = Frame(master)
         self.container4["padx"] = 20
         self.container4["pady"] = 5
         self.container4.pack()
+
         self.container5 = Frame(master)
         self.container5["padx"] = 20
         self.container5["pady"] = 5
         self.container5.pack()
+
         self.container6 = Frame(master)
         self.container6["padx"] = 20
         self.container6["pady"] = 5
         self.container6.pack()
+
         self.container7 = Frame(master)
         self.container7["padx"] = 20
         self.container7["pady"] = 5
         self.container7.pack()
+
         self.container8 = Frame(master)
         self.container8["padx"] = 15
         self.container8["pady"] = 5
@@ -103,6 +109,9 @@ class Application:
         janela_de_cadastro = Toplevel(root)
         janela_de_cadastro.title("Sivep Cadastro")
 
+        scrollbar = Scrollbar(janela_de_cadastro)
+        scrollbar.pack(side=RIGHT)
+
         self.container1 = Frame(janela_de_cadastro)
         self.container1["pady"] = 10
         self.container1.pack()
@@ -172,11 +181,10 @@ class Application:
         janela_da_ficha.title("Sivep Ficha")
 
         scrollbar = Scrollbar(janela_da_ficha)
-        scrollbar.pack()
+        scrollbar.pack(side=RIGHT,fill=Y)
 
-        self.fontePadrao = ("Verdana", "10")
+        self.fonte = ("Verdana", "10")
         self.fonteTitulo = ("Verdana", "12", "bold")
-
         self.fonte_titulo = "Calibri", "12", "bold"
         self.fonte = "Calibri", "10"
 
@@ -186,12 +194,12 @@ class Application:
 
         self.titulo = Label(self.container1, text="Preenchimento de Ficha SIVEP", font=("Calibri", "15", "bold"))
         self.titulo.pack()
-        self.lblmsg = Label(self.container1, text="", font=self.fontePadrao)
-        self.lblmsg.pack(side=LEFT)
+        self.lblmsg = Label(self.container1, text="", font=self.fonte)
+        self.lblmsg.pack(side=TOP)
 
-        self.btnCadastrarFicha = Button(self.container1, text = "Cadastrar", font=self.fontePadrao)
+        self.btnCadastrarFicha = Button(self.container1, text = "Cadastrar", font=self.fonte)
         self.btnCadastrarFicha["command"] = self.cadastraFicha
-        self.btnCadastrarFicha.pack(side=RIGHT)
+        self.btnCadastrarFicha.pack(side=TOP)
 
         self.container2 = Frame(janela_da_ficha)
         self.container2["padx"] = 20
@@ -222,36 +230,41 @@ class Application:
         self.txtc3["width"] = 2
         self.txtc3.pack(side=LEFT)
 
-        self.lblc4_1 = Label(self.container2, text="4 - Município: ", font=self.fonte)
+        self.container_extra1 = Frame(janela_da_ficha)
+        self.container_extra1["padx"] = 20
+        self.container_extra1["pady"] = 8
+        self.container_extra1.pack()
+
+        self.lblc4_1 = Label(self.container_extra1, text="4 - Município: ", font=self.fonte)
         self.lblc4_1.pack(side=LEFT)
 
-        self.txtc4_1 = Entry(self.container2)
+        self.txtc4_1 = Entry(self.container_extra1)
         self.txtc4_1["font"] = self.fonte
-        self.txtc4_1["width"] = 20
+        self.txtc4_1["width"] = 15
         self.txtc4_1.pack(side=LEFT)
 
-        self.lblc4_2 = Label(self.container2, text=" Código(IBGE): ", font=self.fonte)
+        self.lblc4_2 = Label(self.container_extra1, text=" Código(IBGE): ", font=self.fonte)
         self.lblc4_2.pack(side=LEFT)
 
-        self.txtc4_2 = Entry(self.container2)
+        self.txtc4_2 = Entry(self.container_extra1)
         self.txtc4_2["font"] = self.fonte
-        self.txtc4_2["width"] = 13
+        self.txtc4_2["width"] = 15
         self.txtc4_2.pack(side=LEFT)
 
-        self.lblc5_1 = Label(self.container2, text="5 - Unidade de Saúde: ", font=self.fonte)
+        self.lblc5_1 = Label(self.container_extra1, text="5 - Unidade de Saúde: ", font=self.fonte)
         self.lblc5_1.pack(side=LEFT)
 
-        self.txtc5_1 = Entry(self.container2)
+        self.txtc5_1 = Entry(self.container_extra1)
         self.txtc5_1["font"] = self.fonte
-        self.txtc5_1["width"] = 20
+        self.txtc5_1["width"] = 15
         self.txtc5_1.pack(side=LEFT)
 
-        self.lblc5_2 = Label(self.container2, text="Código(CMES):", font=self.fonte)
+        self.lblc5_2 = Label(self.container_extra1, text="Código(CMES):", font=self.fonte)
         self.lblc5_2.pack(side=LEFT)
 
-        self.txtc5_2 = Entry(self.container2)
+        self.txtc5_2 = Entry(self.container_extra1)
         self.txtc5_2["font"] = self.fonte
-        self.txtc5_2["width"] = 13
+        self.txtc5_2["width"] = 15
         self.txtc5_2.pack(side=LEFT)
 
         self.container3 = Frame(janela_da_ficha)
@@ -272,7 +285,7 @@ class Application:
 
         self.txtc6 = Entry(self.container4)
         self.txtc6["font"] = self.fonte
-        self.txtc6["width"] = 20
+        self.txtc6["width"] = 10
         self.txtc6.pack(side=LEFT)
 
         self.lblc7 = Label(self.container4, text="7 - Nome: ", font=self.fonte)
@@ -280,7 +293,7 @@ class Application:
 
         self.txtc7 = Entry(self.container4)
         self.txtc7["font"] = self.fonte
-        self.txtc7["width"] = 25
+        self.txtc7["width"] = 20
         self.txtc7.pack(side=LEFT)
 
         self.lblc8 = Label(self.container4, text="8 - Sexo(1-M/2-F/9-Ignorar): ", font=self.fonte)
@@ -288,7 +301,7 @@ class Application:
 
         self.txtc8 = Entry(self.container4)
         self.txtc8["font"] = self.fonte
-        self.txtc8["width"] = 3
+        self.txtc8["width"] = 2
         self.txtc8.pack(side=LEFT)
 
         self.lblc9 = Label(self.container4, text="9 -  Data de Nascimento: ", font=self.fonte)
@@ -299,28 +312,33 @@ class Application:
         self.txtc9["width"] = 10
         self.txtc9.pack(side=LEFT)
 
-        self.lblc10_1 = Label(self.container4, text="10 - (ou)Idade ", font=self.fonte)
+        self.container_extra2 = Frame(janela_da_ficha)
+        self.container_extra2["padx"] = 20
+        self.container_extra2["pady"] = 8
+        self.container_extra2.pack()
+
+        self.lblc10_1 = Label(self.container_extra2, text="10 - (ou)Idade ", font=self.fonte)
         self.lblc10_1.pack(side=LEFT)
 
-        self.txtc10_1 = Entry(self.container4)
+        self.txtc10_1 = Entry(self.container_extra2)
         self.txtc10_1["font"] = self.fonte
-        self.txtc10_1["width"] = 3
+        self.txtc10_1["width"] = 2
         self.txtc10_1.pack(side=LEFT)
 
-        self.lblc10_2 = Label(self.container4, text="1 - Dia, 2- Mês, 3- Ano ", font=self.fonte)
+        self.lblc10_2 = Label(self.container_extra2, text="1 - Dia, 2- Mês, 3- Ano ", font=self.fonte)
         self.lblc10_2.pack(side=LEFT)
 
-        self.txtc10_2 = Entry(self.container4)
+        self.txtc10_2 = Entry(self.container_extra2)
         self.txtc10_2["font"] = self.fonte
         self.txtc10_2["width"] = 2
         self.txtc10_2.pack(side=LEFT)
 
-        self.lblc11 = Label(self.container4, text="11 - Gestante(1 - 1ºTrimerstre, 2-2ºTrimestre, 3-3ºTrimestre "
-                                                  "\n 4-Idade gestacional ignorada), 5-Não \n6-Não se aplica, "
-                                                  "9-Ignorado: ", font=self.fonte)
+        self.lblc11 = Label(self.container_extra2, font=self.fonte)
+        self.lblc11['text'] = ("11 - Gestante (1 - 1ºTrimerstre, 2 - 2ºTrimestre, 3 - 3ºTrimestre "
+            "4 - Idade gestacional ignorada, 5 - Não 6 - Não se aplica, 9 - Ignorado: ")
         self.lblc11.pack(side=LEFT)
 
-        self.txtc11 = Entry(self.container4)
+        self.txtc11 = Entry(self.container_extra2)
         self.txtc11["font"] = self.fonte
         self.txtc11["width"] = 2
         self.txtc11.pack(side=LEFT)
@@ -330,13 +348,14 @@ class Application:
         self.container5["pady"] = 8
         self.container5.pack()
 
-        self.lblc12 = Label(self.container5, text="12 - Raça/Cor (1-Branca, 2-Preta, 3-Amarela\n"
-                                                  "4-Parda, 5-Indígena, 9-Ignorado): ", font=self.fonte)
+        self.lblc12 = Label(self.container5, font=self.fonte)
+        self.lblc12['text'] = ("12 - Raça/Cor (1 - Branca, 2 - Preta, 3 - Amarela"
+            "4 - Parda, 5 - Indígena, 9 - Ignorado): ")
         self.lblc12.pack(side=LEFT)
 
         self.txtc12 = Entry(self.container5)
         self.txtc12["font"] = self.fonte
-        self.txtc12["width"] = 10
+        self.txtc12["width"] = 15
         self.txtc12.pack(side=LEFT)
 
         self.lblc13 = Label(self.container5, text="13 - Se indígena, etnia: ", font=self.fonte)
@@ -344,33 +363,39 @@ class Application:
 
         self.txtc13 = Entry(self.container5)
         self.txtc13["font"] = self.fonte
-        self.txtc13["width"] = 20
+        self.txtc13["width"] = 15
         self.txtc13.pack(side=LEFT)
 
-        self.lblc14 = Label(self.container5, text="14 - Escolaridade (0-Sem Escolaridade/Analfabeto\n"
-                                                  "1-Fundamental I, 2-Fundamental II, 3-Médio,\n"
-                                                  "4-Superior, 5-Não se Aplica, 9-Ignorado): ", font=self.fonte)
+        self.container_extra3 = Frame(janela_da_ficha)
+        self.container_extra3["padx"] = 20
+        self.container_extra3["pady"] = 8
+        self.container_extra3.pack()
+
+        self.lblc14 = Label(self.container_extra3, font=self.fonte)
+        self.lblc14['text'] = ("14 - Escolaridade (0 - Sem Escolaridade/Analfabeto"
+            "1 - Fundamental I, 2 - Fundamental II, 3 - Médio"
+            "4 - Superior, 5 - Não se Aplica, 9 - Ignorado): ")
         self.lblc14.pack(side=LEFT)
 
-        self.txtc14 = Entry(self.container5)
+        self.txtc14 = Entry(self.container_extra3)
         self.txtc14["font"] = self.fonte
         self.txtc14["width"] = 2
         self.txtc14.pack(side=LEFT)
 
-        self.lblc15 = Label(self.container5, text="15 - Ocupação: ", font=self.fonte)
+        self.lblc15 = Label(self.container_extra3, text="15 - Ocupação: ", font=self.fonte)
         self.lblc15.pack(side=LEFT)
 
-        self.txtc15 = Entry(self.container5)
+        self.txtc15 = Entry(self.container_extra3)
         self.txtc15["font"] = self.fonte
-        self.txtc15["width"] = 20
+        self.txtc15["width"] = 15
         self.txtc15.pack(side=LEFT)
 
-        self.lblc16 = Label(self.container5, text="16 - Nome da mãe: ", font=self.fonte)
+        self.lblc16 = Label(self.container_extra3, text="16 - Nome da mãe: ", font=self.fonte)
         self.lblc16.pack(side=LEFT)
 
-        self.txtc16 = Entry(self.container5)
+        self.txtc16 = Entry(self.container_extra3)
         self.txtc16["font"] = self.fonte
-        self.txtc16["width"] = 20
+        self.txtc16["width"] = 15
         self.txtc16.pack(side=LEFT)
 
         self.container6 = Frame(janela_da_ficha)
@@ -407,7 +432,7 @@ class Application:
 
         self.txtc19_1 = Entry(self.container7)
         self.txtc19_1["font"] = self.fonte
-        self.txtc19_1["width"] = 25
+        self.txtc19_1["width"] = 15
         self.txtc19_1.pack(side=LEFT)
 
         self.lblc19_2 = Label(self.container7, text=" Código(IBGE): ", font=self.fonte)
@@ -415,7 +440,7 @@ class Application:
 
         self.txtc19_2 = Entry(self.container7)
         self.txtc19_2["font"] = self.fonte
-        self.txtc19_2["width"] = 13
+        self.txtc19_2["width"] = 15
         self.txtc19_2.pack(side=LEFT)
 
         self.lblc20 = Label(self.container7, text="20 - Bairro: ", font=self.fonte)
@@ -423,7 +448,7 @@ class Application:
 
         self.txtc20 = Entry(self.container7)
         self.txtc20["font"] = self.fonte
-        self.txtc20["width"] = 20
+        self.txtc20["width"] = 15
         self.txtc20.pack(side=LEFT)
 
         self.lblc21 = Label(self.container7, text="21 - Logradouro: ", font=self.fonte)
@@ -431,7 +456,7 @@ class Application:
 
         self.txtc21 = Entry(self.container7)
         self.txtc21["font"] = self.fonte
-        self.txtc21["width"] = 20
+        self.txtc21["width"] = 15
         self.txtc21.pack(side=LEFT)
 
         self.lblc22 = Label(self.container7, text="22 - Nº: ", font=self.fonte)
@@ -447,7 +472,7 @@ class Application:
 
         self.txtc23 = Entry(self.container7)
         self.txtc23["font"] = self.fonte
-        self.txtc23["width"] = 15
+        self.txtc23["width"] = 4
         self.txtc23.pack(side=LEFT)
 
         self.container8 = Frame(janela_da_ficha)
@@ -463,8 +488,9 @@ class Application:
         self.txtc24["width"] = 15
         self.txtc24.pack(side=LEFT)
 
-        self.lblc25 = Label(self.container8, text="25 - Zona(1-Urbana, 2-Rural\n"
-                                                  "3-Periurbana, 9-Ignorado): ", font=self.fonte)
+        self.lblc25 = Label(self.container8, font=self.fonte)
+        self.lblc25['text'] = ("25 - Zona (1 - Urbana, 2 - Rural"
+            "3 - Periurbana, 9 - Ignorado): ")
         self.lblc25.pack(side=LEFT)
 
         self.txtc25 = Entry(self.container8)
@@ -496,12 +522,12 @@ class Application:
 
         self.lblc27 = Label(self.container10,
                             text="27 - Paciente tem histórico de viagem internacional até 14 dias antes do início dos sintomas?(1-Sim 2-Não 9-Ignorado)",
-                            font=self.fontePadrao)
+                            font=self.fonte)
         self.lblc27.pack(side=LEFT)
 
         self.txtc27 = Entry(self.container10)
         self.txtc27["width"] = 20
-        self.txtc27["font"] = self.fontePadrao
+        self.txtc27["font"] = self.fonte
         self.txtc27.pack(side=LEFT)
 
         self.container11 = Frame(janela_da_ficha)
@@ -509,22 +535,22 @@ class Application:
         self.container11["pady"] = 8
         self.container11.pack()
 
-        self.lblc28 = Label(self.container11, text="28 - Se sim: Qual País?", font=self.fontePadrao)
+        self.lblc28 = Label(self.container11, text="28 - Se sim: Qual País?", font=self.fonte)
         self.lblc28["width"] = 20
         self.lblc28.pack(side=LEFT)
 
         self.txtc28 = Entry(self.container11)
         self.txtc28["width"] = 40
-        self.txtc28["font"] = self.fontePadrao
+        self.txtc28["font"] = self.fonte
         self.txtc28.pack(side=LEFT)
 
-        self.lblc29 = Label(self.container11, text="29 - Em qual local?", font=self.fontePadrao)
+        self.lblc29 = Label(self.container11, text="29 - Em qual local?", font=self.fonte)
         self.lblc29["width"] = 20
         self.lblc29.pack(side=LEFT)
 
         self.txtc29 = Entry(self.container11)
         self.txtc29["width"] = 40
-        self.txtc29["font"] = self.fontePadrao
+        self.txtc29["font"] = self.fonte
         self.txtc29.pack(side=LEFT)
 
         self.container12 = Frame(janela_da_ficha)
@@ -532,22 +558,22 @@ class Application:
         self.container12["pady"] = 8
         self.container12.pack()
 
-        self.lblc30 = Label(self.container12, text="30 - Data de viagem:", font=self.fontePadrao)
+        self.lblc30 = Label(self.container12, text="30 - Data de viagem:", font=self.fonte)
         self.lblc30["width"] = 20
         self.lblc30.pack(side=LEFT)
 
         self.txtc30 = Entry(self.container12)
         self.txtc30["width"] = 40
-        self.txtc30["font"] = self.fontePadrao
+        self.txtc30["font"] = self.fonte
         self.txtc30.pack(side=LEFT)
 
-        self.lblc31 = Label(self.container12, text="31 - Data de retorno:", font=self.fontePadrao)
+        self.lblc31 = Label(self.container12, text="31 - Data de retorno:", font=self.fonte)
         self.lblc31["width"] = 20
         self.lblc31.pack(side=LEFT)
 
         self.txtc31 = Entry(self.container12)
         self.txtc31["width"] = 40
-        self.txtc31["font"] = self.fontePadrao
+        self.txtc31["font"] = self.fonte
         self.txtc31.pack(side=LEFT)
 
         self.container13 = Frame(janela_da_ficha)
@@ -557,12 +583,12 @@ class Application:
 
         self.lblc32 = Label(self.container13)
         self.lblc32["text"] = "32 - É caso proveniente de surto de SG que evoluiu para SRAG?(1-Sim 2-Não 9-Ignorado)"
-        self.lblc32["font"] = self.fontePadrao
+        self.lblc32["font"] = self.fonte
         self.lblc32.pack(side=LEFT)
 
         self.txtc32 = Entry(self.container13)
         self.txtc32["width"] = 30
-        self.txtc32["font"] = self.fontePadrao
+        self.txtc32["font"] = self.fonte
         self.txtc32.pack(side=LEFT)
 
         self.container14 = Frame(janela_da_ficha)
@@ -573,12 +599,12 @@ class Application:
         self.lblc33 = Label(self.container14)
         self.lblc33[
             "text"] = "33 - Trata-se de caso nosocomial (infecção adquirida no hospital)?(1-Sim 2-Não 9-Ignorado)"
-        self.lblc33["font"] = self.fontePadrao
+        self.lblc33["font"] = self.fonte
         self.lblc33.pack(side=LEFT)
 
         self.txtc33 = Entry(self.container14)
         self.txtc33["width"] = 30
-        self.txtc33["font"] = self.fontePadrao
+        self.txtc33["font"] = self.fonte
         self.txtc33.pack(side=LEFT)
 
         self.container15 = Frame(janela_da_ficha)
@@ -588,12 +614,12 @@ class Application:
 
         self.lblc34 = Label(self.container15)
         self.lblc34["text"] = "34 - Paciente trabalha ou tem contato direto com aves ou suínos?(1-Sim 2-Não 9-Ignorado)"
-        self.lblc34["font"] = self.fontePadrao
+        self.lblc34["font"] = self.fonte
         self.lblc34.pack(side=LEFT)
 
         self.txtc34 = Entry(self.container15)
         self.txtc34["width"] = 30
-        self.txtc34["font"] = self.fontePadrao
+        self.txtc34["font"] = self.fonte
         self.txtc34.pack(side=LEFT)
 
         self.container16 = Frame(janela_da_ficha)
@@ -603,47 +629,47 @@ class Application:
 
         self.lblc35 = Label(self.container16)
         self.lblc35["text"] = "35 - Sinais e Sintomas:(1-Sim 2-Não 9-Ignorado):"
-        self.lblc35["font"] = self.fontePadrao
+        self.lblc35["font"] = self.fonte
         self.lblc35.pack(side=LEFT)
 
         self.lblc35_1 = Label(self.container16)
         self.lblc35_1["text"] = "  Febre"
-        self.lblc35_1["font"] = self.fontePadrao
+        self.lblc35_1["font"] = self.fonte
         self.lblc35_1.pack(side=LEFT)
 
         self.txtc35_1 = Entry(self.container16)
         self.txtc35_1["width"] = 5
-        self.txtc35_1["font"] = self.fontePadrao
+        self.txtc35_1["font"] = self.fonte
         self.txtc35_1.pack(side=LEFT)
 
         self.lblc35_2 = Label(self.container16)
         self.lblc35_2["text"] = "  Tosse"
-        self.lblc35_2["font"] = self.fontePadrao
+        self.lblc35_2["font"] = self.fonte
         self.lblc35_2.pack(side=LEFT)
 
         self.txtc35_2 = Entry(self.container16)
         self.txtc35_2["width"] = 5
-        self.txtc35_2["font"] = self.fontePadrao
+        self.txtc35_2["font"] = self.fonte
         self.txtc35_2.pack(side=LEFT)
 
         self.lblc35_3 = Label(self.container16)
         self.lblc35_3["text"] = "  Dor de garganta"
-        self.lblc35_3["font"] = self.fontePadrao
+        self.lblc35_3["font"] = self.fonte
         self.lblc35_3.pack(side=LEFT)
 
         self.txtc35_3 = Entry(self.container16)
         self.txtc35_3["width"] = 5
-        self.txtc35_3["font"] = self.fontePadrao
+        self.txtc35_3["font"] = self.fonte
         self.txtc35_3.pack(side=LEFT)
 
         self.lblc35_4 = Label(self.container16)
         self.lblc35_4["text"] = "  Dispnéia"
-        self.lblc35_4["font"] = self.fontePadrao
+        self.lblc35_4["font"] = self.fonte
         self.lblc35_4.pack(side=LEFT)
 
         self.txtc35_4 = Entry(self.container16)
         self.txtc35_4["width"] = 5
-        self.txtc35_4["font"] = self.fontePadrao
+        self.txtc35_4["font"] = self.fonte
         self.txtc35_4.pack(side=LEFT)
 
         self.container17 = Frame(janela_da_ficha)
@@ -653,52 +679,52 @@ class Application:
 
         self.lblc35_5 = Label(self.container17)
         self.lblc35_5["text"] = "  Desconforto Respiratório"
-        self.lblc35_5["font"] = self.fontePadrao
+        self.lblc35_5["font"] = self.fonte
         self.lblc35_5.pack(side=LEFT)
 
         self.txtc35_5 = Entry(self.container17)
         self.txtc35_5["width"] = 5
-        self.txtc35_5["font"] = self.fontePadrao
+        self.txtc35_5["font"] = self.fonte
         self.txtc35_5.pack(side=LEFT)
 
         self.lblc35_6 = Label(self.container17)
         self.lblc35_6["text"] = "  Saturação de O2<95%"
-        self.lblc35_6["font"] = self.fontePadrao
+        self.lblc35_6["font"] = self.fonte
         self.lblc35_6.pack(side=LEFT)
 
         self.txtc35_6 = Entry(self.container17)
         self.txtc35_6["width"] = 10
-        self.txtc35_6["font"] = self.fontePadrao
+        self.txtc35_6["font"] = self.fonte
         self.txtc35_6.pack(side=LEFT)
 
         self.lblc35_7 = Label(self.container17)
         self.lblc35_7["text"] = "  Diarreia"
-        self.lblc35_7["font"] = self.fontePadrao
+        self.lblc35_7["font"] = self.fonte
         self.lblc35_7.pack(side=LEFT)
 
         self.txtc35_7 = Entry(self.container17)
         self.txtc35_7["width"] = 5
-        self.txtc35_7["font"] = self.fontePadrao
+        self.txtc35_7["font"] = self.fonte
         self.txtc35_7.pack(side=LEFT)
 
         self.lblc35_8 = Label(self.container17)
         self.lblc35_8["text"] = "    Vômito"
-        self.lblc35_8["font"] = self.fontePadrao
+        self.lblc35_8["font"] = self.fonte
         self.lblc35_8.pack(side=LEFT)
 
         self.txtc35_8 = Entry(self.container17)
         self.txtc35_8["width"] = 5
-        self.txtc35_8["font"] = self.fontePadrao
+        self.txtc35_8["font"] = self.fonte
         self.txtc35_8.pack(side=LEFT)
 
         self.lblc35_9 = Label(self.container17)
         self.lblc35_9["text"] = " Outro(s)"
-        self.lblc35_9["font"] = self.fontePadrao
+        self.lblc35_9["font"] = self.fonte
         self.lblc35_9.pack(side=LEFT)
 
         self.txtc35_9 = Entry(self.container17)
         self.txtc35_9["width"] = 20
-        self.txtc35_9["font"] = self.fontePadrao
+        self.txtc35_9["font"] = self.fonte
         self.txtc35_9.pack(side=LEFT)
 
         self.container18 = Frame(janela_da_ficha)
@@ -708,12 +734,12 @@ class Application:
 
         self.lblc36_1 = Label(self.container18)
         self.lblc36_1["text"] = "36 - Possui fatores de risco/comorbidades?(1-Sim 2-Não 9-Ignorado)"
-        self.lblc36_1["font"] = self.fontePadrao
+        self.lblc36_1["font"] = self.fonte
         self.lblc36_1.pack(side=LEFT)
 
         self.txtc36_1 = Entry(self.container18)
         self.txtc36_1["width"] = 30
-        self.txtc36_1["font"] = self.fontePadrao
+        self.txtc36_1["font"] = self.fonte
         self.txtc36_1.pack(side=LEFT)
 
         self.container19 = Frame(janela_da_ficha)
@@ -723,47 +749,47 @@ class Application:
 
         self.lblc36 = Label(self.container19)
         self.lblc36["text"] = "Se sim, qual(is)?(marcar x):     "
-        self.lblc36["font"] = self.fontePadrao
+        self.lblc36["font"] = self.fonte
         self.lblc36.pack(side=LEFT)
 
         self.lblc36_2 = Label(self.container19)
         self.lblc36_2["text"] = "Puérpera(até 45 dias do parto)"
-        self.lblc36_2["font"] = self.fontePadrao
+        self.lblc36_2["font"] = self.fonte
         self.lblc36_2.pack(side=LEFT)
 
         self.txtc36_2 = Entry(self.container19)
         self.txtc36_2["width"] = 2
-        self.txtc36_2["font"] = self.fontePadrao
+        self.txtc36_2["font"] = self.fonte
         self.txtc36_2.pack(side=LEFT)
 
         self.lblc36_3 = Label(self.container19)
         self.lblc36_3["text"] = "  Síndrome de Down"
-        self.lblc36_3["font"] = self.fontePadrao
+        self.lblc36_3["font"] = self.fonte
         self.lblc36_3.pack(side=LEFT)
 
         self.txtc36_3 = Entry(self.container19)
         self.txtc36_3["width"] = 2
-        self.txtc36_3["font"] = self.fontePadrao
+        self.txtc36_3["font"] = self.fonte
         self.txtc36_3.pack(side=LEFT)
 
         self.lblc36_4 = Label(self.container19)
         self.lblc36_4["text"] = "   Diabetes mellitus"
-        self.lblc36_4["font"] = self.fontePadrao
+        self.lblc36_4["font"] = self.fonte
         self.lblc36_4.pack(side=LEFT)
 
         self.txtc36_4 = Entry(self.container19)
         self.txtc36_4["width"] = 2
-        self.txtc36_4["font"] = self.fontePadrao
+        self.txtc36_4["font"] = self.fonte
         self.txtc36_4.pack(side=LEFT)
 
         self.lblc36_5 = Label(self.container19)
         self.lblc36_5["text"] = "   Imunodefiência/Imunodepressão"
-        self.lblc36_5["font"] = self.fontePadrao
+        self.lblc36_5["font"] = self.fonte
         self.lblc36_5.pack(side=LEFT)
 
         self.txtc36_5 = Entry(self.container19)
         self.txtc36_5["width"] = 2
-        self.txtc36_5["font"] = self.fontePadrao
+        self.txtc36_5["font"] = self.fonte
         self.txtc36_5.pack(side=LEFT)
 
         self.container20 = Frame(janela_da_ficha)
@@ -773,52 +799,52 @@ class Application:
 
         self.lblc36_6 = Label(self.container20)
         self.lblc36_6["text"] = "   Outros"
-        self.lblc36_6["font"] = self.fontePadrao
+        self.lblc36_6["font"] = self.fonte
         self.lblc36_6.pack(side=LEFT)
 
         self.txtc36_6 = Entry(self.container20)
         self.txtc36_6["width"] = 15
-        self.txtc36_6["font"] = self.fontePadrao
+        self.txtc36_6["font"] = self.fonte
         self.txtc36_6.pack(side=LEFT)
 
         self.lblc36_7 = Label(self.container20)
         self.lblc36_7["text"] = "  Doença Cardiovascular Crônica"
-        self.lblc36_7["font"] = self.fontePadrao
+        self.lblc36_7["font"] = self.fonte
         self.lblc36_7.pack(side=LEFT)
 
         self.txtc36_7 = Entry(self.container20)
         self.txtc36_7["width"] = 2
-        self.txtc36_7["font"] = self.fontePadrao
+        self.txtc36_7["font"] = self.fonte
         self.txtc36_7.pack(side=LEFT)
 
         self.lblc36_8 = Label(self.container20)
         self.lblc36_8["text"] = "  Doença Hepática Crônica"
-        self.lblc36_8["font"] = self.fontePadrao
+        self.lblc36_8["font"] = self.fonte
         self.lblc36_8.pack(side=LEFT)
 
         self.txtc36_8 = Entry(self.container20)
         self.txtc36_8["width"] = 2
-        self.txtc36_8["font"] = self.fontePadrao
+        self.txtc36_8["font"] = self.fonte
         self.txtc36_8.pack(side=LEFT)
 
         self.lblc36_9 = Label(self.container20)
         self.lblc36_9["text"] = "   Doença Neurológica Crônica"
-        self.lblc36_9["font"] = self.fontePadrao
+        self.lblc36_9["font"] = self.fonte
         self.lblc36_9.pack(side=LEFT)
 
         self.txtc36_9 = Entry(self.container20)
         self.txtc36_9["width"] = 2
-        self.txtc36_9["font"] = self.fontePadrao
+        self.txtc36_9["font"] = self.fonte
         self.txtc36_9.pack(side=LEFT)
 
         self.lblc36_10 = Label(self.container20)
         self.lblc36_10["text"] = "   Doença Renal Crônica"
-        self.lblc36_10["font"] = self.fontePadrao
+        self.lblc36_10["font"] = self.fonte
         self.lblc36_10.pack(side=LEFT)
 
         self.txtc36_10 = Entry(self.container20)
         self.txtc36_10["width"] = 2
-        self.txtc36_10["font"] = self.fontePadrao
+        self.txtc36_10["font"] = self.fonte
         self.txtc36_10.pack(side=LEFT)
 
         self.container21 = Frame(janela_da_ficha)
@@ -828,52 +854,52 @@ class Application:
 
         self.lblc36_11 = Label(self.container21)
         self.lblc36_11["text"] = "  Doença Hematológica Crônica"
-        self.lblc36_11["font"] = self.fontePadrao
+        self.lblc36_11["font"] = self.fonte
         self.lblc36_11.pack(side=LEFT)
 
         self.txtc36_11 = Entry(self.container21)
         self.txtc36_11["width"] = 2
-        self.txtc36_11["font"] = self.fontePadrao
+        self.txtc36_11["font"] = self.fonte
         self.txtc36_11.pack(side=LEFT)
 
         self.lblc36_12 = Label(self.container21)
         self.lblc36_12["text"] = "  Asma"
-        self.lblc36_12["font"] = self.fontePadrao
+        self.lblc36_12["font"] = self.fonte
         self.lblc36_12.pack(side=LEFT)
 
         self.txtc36_12 = Entry(self.container21)
         self.txtc36_12["width"] = 2
-        self.txtc36_12["font"] = self.fontePadrao
+        self.txtc36_12["font"] = self.fonte
         self.txtc36_12.pack(side=LEFT)
 
         self.lblc36_13 = Label(self.container21)
         self.lblc36_13["text"] = "   Outra Pneumopatia Crônica"
-        self.lblc36_13["font"] = self.fontePadrao
+        self.lblc36_13["font"] = self.fonte
         self.lblc36_13.pack(side=LEFT)
 
         self.txtc36_13 = Entry(self.container21)
         self.txtc36_13["width"] = 2
-        self.txtc36_13["font"] = self.fontePadrao
+        self.txtc36_13["font"] = self.fonte
         self.txtc36_13.pack(side=LEFT)
 
         self.lblc36_14_1 = Label(self.container21)
         self.lblc36_14_1["text"] = "   Obesidade"
-        self.lblc36_14_1["font"] = self.fontePadrao
+        self.lblc36_14_1["font"] = self.fonte
         self.lblc36_14_1.pack(side=LEFT)
 
         self.txtc36_14_1 = Entry(self.container21)
         self.txtc36_14_1["width"] = 2
-        self.txtc36_14_1["font"] = self.fontePadrao
+        self.txtc36_14_1["font"] = self.fonte
         self.txtc36_14_1.pack(side=LEFT)
 
         self.lblc36_14_2 = Label(self.container21)
         self.lblc36_14_2["text"] = "IMC"
-        self.lblc36_14_2["font"] = self.fontePadrao
+        self.lblc36_14_2["font"] = self.fonte
         self.lblc36_14_2.pack(side=LEFT)
 
         self.txtc36_14_2 = Entry(self.container21)
         self.txtc36_14_2["width"] = 2
-        self.txtc36_14_2["font"] = self.fontePadrao
+        self.txtc36_14_2["font"] = self.fonte
         self.txtc36_14_2.pack(side=LEFT)
 
         self.container22 = Frame(janela_da_ficha)
@@ -883,22 +909,22 @@ class Application:
 
         self.lblc37 = Label(self.container22)
         self.lblc37["text"] = "37 - Recebeu vacina contra Gripe na última campanha?(1-Sim 2-Não 9-Ignorado)"
-        self.lblc37["font"] = self.fontePadrao
+        self.lblc37["font"] = self.fonte
         self.lblc37.pack(side=LEFT)
 
         self.txtc37 = Entry(self.container22)
         self.txtc37["width"] = 15
-        self.txtc37["font"] = self.fontePadrao
+        self.txtc37["font"] = self.fonte
         self.txtc37.pack(side=LEFT)
 
         self.lblc38_1 = Label(self.container22)
         self.lblc38_1["text"] = "  38 - Data da Vacinação"
-        self.lblc38_1["font"] = self.fontePadrao
+        self.lblc38_1["font"] = self.fonte
         self.lblc38_1.pack(side=LEFT)
 
         self.txtc38_1 = Entry(self.container22)
         self.txtc38_1["width"] = 15
-        self.txtc38_1["font"] = self.fontePadrao
+        self.txtc38_1["font"] = self.fonte
         self.txtc38_1.pack(side=LEFT)
 
         self.container23 = Frame(janela_da_ficha)
@@ -908,22 +934,22 @@ class Application:
 
         self.lblc38_2 = Label(self.container23)
         self.lblc38_2["text"] = "Se < 6 meses: A mãe recebeu vacina?(1-Sim 2-Não 9-Ignorado)"
-        self.lblc38_2["font"] = self.fontePadrao
+        self.lblc38_2["font"] = self.fonte
         self.lblc38_2.pack(side=LEFT)
 
         self.txtc38_2 = Entry(self.container23)
         self.txtc38_2["width"] = 15
-        self.txtc38_2["font"] = self.fontePadrao
+        self.txtc38_2["font"] = self.fonte
         self.txtc38_2.pack(side=LEFT)
 
         self.lblc38_3 = Label(self.container23)
         self.lblc38_3["text"] = "   Se sim, data:"
-        self.lblc38_3["font"] = self.fontePadrao
+        self.lblc38_3["font"] = self.fonte
         self.lblc38_3.pack(side=LEFT)
 
         self.txtc38_3 = Entry(self.container23)
         self.txtc38_3["width"] = 15
-        self.txtc38_3["font"] = self.fontePadrao
+        self.txtc38_3["font"] = self.fonte
         self.txtc38_3.pack(side=LEFT)
 
         self.container24 = Frame(janela_da_ficha)
@@ -933,12 +959,12 @@ class Application:
 
         self.lblc38_4 = Label(self.container24)
         self.lblc38_4["text"] = "    A mãe amamentava a criança?(1-Sim 2-Não 9-Ignorado)"
-        self.lblc38_4["font"] = self.fontePadrao
+        self.lblc38_4["font"] = self.fonte
         self.lblc38_4.pack(side=LEFT)
 
         self.txtc38_4 = Entry(self.container24)
         self.txtc38_4["width"] = 15
-        self.txtc38_4["font"] = self.fontePadrao
+        self.txtc38_4["font"] = self.fonte
         self.txtc38_4.pack(side=LEFT)
 
         self.container25 = Frame(janela_da_ficha)
@@ -948,7 +974,7 @@ class Application:
 
         self.lblc38 = Label(self.container25)
         self.lblc38["text"] = "Se >= 6 meses e <= 8 anos:"
-        self.lblc38["font"] = self.fontePadrao
+        self.lblc38["font"] = self.fonte
         self.lblc38.pack(side=LEFT)
 
         self.container26 = Frame(janela_da_ficha)
@@ -958,17 +984,17 @@ class Application:
 
         self.lblc38_5_1 = Label(self.container26)
         self.lblc38_5_1["text"] = "Data da dose única 1/1:"
-        self.lblc38_5_1["font"] = self.fontePadrao
+        self.lblc38_5_1["font"] = self.fonte
         self.lblc38_5_1.pack(side=LEFT)
 
         self.txtc38_5 = Entry(self.container26)
         self.txtc38_5["width"] = 15
-        self.txtc38_5["font"] = self.fontePadrao
+        self.txtc38_5["font"] = self.fonte
         self.txtc38_5.pack(side=LEFT)
 
         self.lblc38_5_2 = Label(self.container26)
         self.lblc38_5_2["text"] = "   (dose única para crianças vacinadas em campanhas de anos anteriores)"
-        self.lblc38_5_2["font"] = self.fontePadrao
+        self.lblc38_5_2["font"] = self.fonte
         self.lblc38_5_2.pack(side=LEFT)
 
         self.container27 = Frame(janela_da_ficha)
@@ -978,17 +1004,17 @@ class Application:
 
         self.lblc38_6_1 = Label(self.container27)
         self.lblc38_6_1["text"] = "Data da primeira dose:"
-        self.lblc38_6_1["font"] = self.fontePadrao
+        self.lblc38_6_1["font"] = self.fonte
         self.lblc38_6_1.pack(side=LEFT)
 
         self.txtc38_6 = Entry(self.container27)
         self.txtc38_6["width"] = 15
-        self.txtc38_6["font"] = self.fontePadrao
+        self.txtc38_6["font"] = self.fonte
         self.txtc38_6.pack(side=LEFT)
 
         self.lblc38_6_2 = Label(self.container27)
         self.lblc38_6_2["text"] = "   (1ª dose para crianças vacinadas pela primeira vez)"
-        self.lblc38_6_2["font"] = self.fontePadrao
+        self.lblc38_6_2["font"] = self.fonte
         self.lblc38_6_2.pack(side=LEFT)
 
         self.container28 = Frame(janela_da_ficha)
@@ -998,17 +1024,17 @@ class Application:
 
         self.lblc38_7_1 = Label(self.container28)
         self.lblc38_7_1["text"] = "Data da segunda dose:"
-        self.lblc38_7_1["font"] = self.fontePadrao
+        self.lblc38_7_1["font"] = self.fonte
         self.lblc38_7_1.pack(side=LEFT)
 
         self.txtc38_7 = Entry(self.container28)
         self.txtc38_7["width"] = 15
-        self.txtc38_7["font"] = self.fontePadrao
+        self.txtc38_7["font"] = self.fonte
         self.txtc38_7.pack(side=LEFT)
 
         self.lblc38_7_2 = Label(self.container28)
         self.lblc38_7_2["text"] = "   (2ª dose para crianças vacinadas pela primeira vez)"
-        self.lblc38_7_2["font"] = self.fontePadrao
+        self.lblc38_7_2["font"] = self.fonte
         self.lblc38_7_2.pack(side=LEFT)
 
         self.container29 = Frame(janela_da_ficha)
@@ -1026,30 +1052,30 @@ class Application:
         self.container30.pack()
 
         self.lblc39 = Label(self.container30, text="39 - Usou antiviral para gripe?(1-Sim 2-Não 9-Ignorado)",
-                            font=self.fontePadrao)
+                            font=self.fonte)
         self.lblc39.pack(side=LEFT)
 
         self.txtc39 = Entry(self.container30)
         self.txtc39["width"] = 8
-        self.txtc39["font"] = self.fontePadrao
+        self.txtc39["font"] = self.fonte
         self.txtc39.pack(side=LEFT)
 
         self.lblc40 = Label(self.container30,
                             text="40 - Qual antiviral?(1-Oseltamivir 2-Zanamivir 3-Outro, especifique)",
-                            font=self.fontePadrao)
+                            font=self.fonte)
         self.lblc40.pack(side=LEFT)
 
         self.txtc40 = Entry(self.container30)
         self.txtc40["width"] = 16
-        self.txtc40["font"] = self.fontePadrao
+        self.txtc40["font"] = self.fonte
         self.txtc40.pack(side=LEFT)
 
-        self.lblc41 = Label(self.container30, text="41 - Data inicio do tratamento", font=self.fontePadrao)
+        self.lblc41 = Label(self.container30, text="41 - Data inicio do tratamento", font=self.fonte)
         self.lblc41.pack(side=LEFT)
 
         self.txtc41 = Entry(self.container30)
         self.txtc41["width"] = 12
-        self.txtc41["font"] = self.fontePadrao
+        self.txtc41["font"] = self.fonte
         self.txtc41.pack(side=LEFT)
 
         self.container31 = Frame(janela_da_ficha)
@@ -1058,28 +1084,28 @@ class Application:
         self.container31.pack()
 
         self.lblc42 = Label(self.container31, text="   42 - Houve interneção?(1-Sim 2-Não 9-Ignorado)",
-                            font=self.fontePadrao)
+                            font=self.fonte)
         self.lblc42.pack(side=LEFT)
 
         self.txtc42 = Entry(self.container31)
         self.txtc42["width"] = 12
-        self.txtc42["font"] = self.fontePadrao
+        self.txtc42["font"] = self.fonte
         self.txtc42.pack(side=LEFT)
 
-        self.lblc43 = Label(self.container31, text="   43 - Data da internação por SRAG:", font=self.fontePadrao)
+        self.lblc43 = Label(self.container31, text="   43 - Data da internação por SRAG:", font=self.fonte)
         self.lblc43.pack(side=LEFT)
 
         self.txtc43 = Entry(self.container31)
         self.txtc43["width"] = 12
-        self.txtc43["font"] = self.fontePadrao
+        self.txtc43["font"] = self.fonte
         self.txtc43.pack(side=LEFT)
 
-        self.lblc44 = Label(self.container31, text="   44 - UF de internação:", font=self.fontePadrao)
+        self.lblc44 = Label(self.container31, text="   44 - UF de internação:", font=self.fonte)
         self.lblc44.pack(side=LEFT)
 
         self.txtc44 = Entry(self.container31)
         self.txtc44["width"] = 12
-        self.txtc44["font"] = self.fontePadrao
+        self.txtc44["font"] = self.fonte
         self.txtc44.pack(side=LEFT)
 
         self.container32 = Frame(janela_da_ficha)
@@ -1087,20 +1113,20 @@ class Application:
         self.container32["pady"] = 8
         self.container32.pack()
 
-        self.lblc45_1 = Label(self.container32, text="45 - Município de internação:", font=self.fontePadrao)
+        self.lblc45_1 = Label(self.container32, text="45 - Município de internação:", font=self.fonte)
         self.lblc45_1.pack(side=LEFT)
 
         self.txtc45_1 = Entry(self.container32)
         self.txtc45_1["width"] = 12
-        self.txtc45_1["font"] = self.fontePadrao
+        self.txtc45_1["font"] = self.fonte
         self.txtc45_1.pack(side=LEFT)
 
-        self.lblc45_2 = Label(self.container32, text="          Código(IBGE):", font=self.fontePadrao)
+        self.lblc45_2 = Label(self.container32, text="          Código(IBGE):", font=self.fonte)
         self.lblc45_2.pack(side=LEFT)
 
         self.txtc45_2 = Entry(self.container32)
         self.txtc45_2["width"] = 12
-        self.txtc45_2["font"] = self.fontePadrao
+        self.txtc45_2["font"] = self.fonte
         self.txtc45_2.pack(side=LEFT)
 
         self.container33 = Frame(janela_da_ficha)
@@ -1108,20 +1134,20 @@ class Application:
         self.container33["pady"] = 8
         self.container33.pack()
 
-        self.lblc46_1 = Label(self.container33, text="46 - Unidade de saúde de internação:", font=self.fontePadrao)
+        self.lblc46_1 = Label(self.container33, text="46 - Unidade de saúde de internação:", font=self.fonte)
         self.lblc46_1.pack(side=LEFT)
 
         self.txtc46_1 = Entry(self.container33)
         self.txtc46_1["width"] = 12
-        self.txtc46_1["font"] = self.fontePadrao
+        self.txtc46_1["font"] = self.fonte
         self.txtc46_1.pack(side=LEFT)
 
-        self.lblc46_2 = Label(self.container33, text="          Código(CNES):", font=self.fontePadrao)
+        self.lblc46_2 = Label(self.container33, text="          Código(CNES):", font=self.fonte)
         self.lblc46_2.pack(side=LEFT)
 
         self.txtc46_2 = Entry(self.container33)
         self.txtc46_2["width"] = 12
-        self.txtc46_2["font"] = self.fontePadrao
+        self.txtc46_2["font"] = self.fonte
         self.txtc46_2.pack(side=LEFT)
 
         self.container34 = Frame(janela_da_ficha)
@@ -1130,28 +1156,28 @@ class Application:
         self.container34.pack()
 
         self.lblc47 = Label(self.container34, text="   47 - Internado em UTI?(1-Sim 2-Não 9-Ignorado)",
-                            font=self.fontePadrao)
+                            font=self.fonte)
         self.lblc47.pack(side=LEFT)
 
         self.txtc47 = Entry(self.container34)
         self.txtc47["width"] = 12
-        self.txtc47["font"] = self.fontePadrao
+        self.txtc47["font"] = self.fonte
         self.txtc47.pack(side=LEFT)
 
-        self.lblc48 = Label(self.container34, text="   48 - Data de entrada na UTI:", font=self.fontePadrao)
+        self.lblc48 = Label(self.container34, text="   48 - Data de entrada na UTI:", font=self.fonte)
         self.lblc48.pack(side=LEFT)
 
         self.txtc48 = Entry(self.container34)
         self.txtc48["width"] = 12
-        self.txtc48["font"] = self.fontePadrao
+        self.txtc48["font"] = self.fonte
         self.txtc48.pack(side=LEFT)
 
-        self.lblc49 = Label(self.container34, text="   49 - Data de saida na UTI:", font=self.fontePadrao)
+        self.lblc49 = Label(self.container34, text="   49 - Data de saida na UTI:", font=self.fonte)
         self.lblc49.pack(side=LEFT)
 
         self.txtc49 = Entry(self.container34)
         self.txtc49["width"] = 12
-        self.txtc49["font"] = self.fontePadrao
+        self.txtc49["font"] = self.fonte
         self.txtc49.pack(side=LEFT)
 
         self.container35 = Frame(janela_da_ficha)
@@ -1161,15 +1187,15 @@ class Application:
 
         self.lblc50 = Label(self.container35,
                             text="50 - Uso de suporte ventilarório: (1-Sim, invasico 2-Sim, não invasivo 3-Não 9-Ignorado)",
-                            font=self.fontePadrao)
+                            font=self.fonte)
         self.lblc50.pack(side=LEFT)
 
         self.txtc50 = Entry(self.container35)
         self.txtc50["width"] = 12
-        self.txtc50["font"] = self.fontePadrao
+        self.txtc50["font"] = self.fonte
         self.txtc50.pack(side=LEFT)
 
-        self.lblc51 = Label(self.container35, font=self.fontePadrao)
+        self.lblc51 = Label(self.container35, font=self.fonte)
         self.lblc51['text'] = ("51 - Raio X de toráx: " +
                                "(1-Normal, " +
                                "2-Infiltrado intersticial, " +
@@ -1182,7 +1208,7 @@ class Application:
 
         self.txtc51 = Entry(self.container35)
         self.txtc51["width"] = 12
-        self.txtc51["font"] = self.fontePadrao
+        self.txtc51["font"] = self.fonte
         self.txtc51.pack(side=LEFT)
 
         self.container36 = Frame(janela_da_ficha)
@@ -1190,21 +1216,21 @@ class Application:
         self.container36["pady"] = 8
         self.container36.pack()
 
-        self.lblc52 = Label(self.container36, text="   52 - Data do raio X:", font=self.fontePadrao)
+        self.lblc52 = Label(self.container36, text="   52 - Data do raio X:", font=self.fonte)
         self.lblc52.pack(side=LEFT)
 
         self.txtc52 = Entry(self.container36)
         self.txtc52["width"] = 12
-        self.txtc52["font"] = self.fontePadrao
+        self.txtc52["font"] = self.fonte
         self.txtc52.pack(side=LEFT)
 
         self.lblc53 = Label(self.container36, text="53 - Coletou amostra?(1-Sim 2-Não 9-Ignorado):",
-                            font=self.fontePadrao)
+                            font=self.fonte)
         self.lblc53.pack(side=LEFT)
 
         self.txtc53 = Entry(self.container36)
         self.txtc53["width"] = 12
-        self.txtc53["font"] = self.fontePadrao
+        self.txtc53["font"] = self.fonte
         self.txtc53.pack(side=LEFT)
 
         self.container37 = Frame(janela_da_ficha)
@@ -1212,15 +1238,15 @@ class Application:
         self.container37["pady"] = 8
         self.container37.pack()
 
-        self.lblc54 = Label(self.container37, text="   54 - Data da coleta:", font=self.fontePadrao)
+        self.lblc54 = Label(self.container37, text="   54 - Data da coleta:", font=self.fonte)
         self.lblc54.pack(side=LEFT)
 
         self.txtc54 = Entry(self.container37)
         self.txtc54["width"] = 12
-        self.txtc54["font"] = self.fontePadrao
+        self.txtc54["font"] = self.fonte
         self.txtc54.pack(side=LEFT)
 
-        self.lblc55 = Label(self.container37, font=self.fontePadrao)
+        self.lblc55 = Label(self.container37, font=self.fonte)
         self.lblc55['text'] = ('55 - Tipo de amostra: ' +
                                '(1-Secreção de Naso-orofaringe, ' +
                                '2-Lavado Broco-alveolar, ' +
@@ -1231,7 +1257,7 @@ class Application:
 
         self.txtc55 = Entry(self.container37)
         self.txtc55["width"] = 1
-        self.txtc55["font"] = self.fontePadrao
+        self.txtc55["font"] = self.fonte
         self.txtc55.pack(side=LEFT)
 
         self.container38 = Frame(janela_da_ficha)
@@ -1737,7 +1763,7 @@ class Application:
         self.txtusuario.insert(INSERT, user.usuario)
 
         self.txtsenha.delete(0, END)
-        #self.txtsenha.insert(INSERT, user.senha)
+        # self.txtsenha.insert(INSERT, user.senha)
 
         self.txtnome.delete(0, END)
         self.txtnome.insert(INSERT, user.nome)
