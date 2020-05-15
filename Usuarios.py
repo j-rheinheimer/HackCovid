@@ -19,10 +19,10 @@ class Usuarios(object):
 
             c = banco.conexao.cursor()
 
-            c.execute("insert into login (usuario) values ('" + self.usuario + "')")
-            c.execute("insert into login (senha) values ('" + self.senha + "')")
-            c.execute("insert into login (nome) value ('" + self.nome + "')")
-            c.execute("insert into login (senha) value ('" + self.crm + "')")
+            c.execute("insert into login (usuario, senha, nome, crm) values( "
+                "('" + self.usuario + "'), ('" + self.senha + "'), "
+                "('" + self.nome + "'), ('" + self.crm + "')"
+                )
 
             banco.conexao.commit()
             c.close()
@@ -37,7 +37,9 @@ class Usuarios(object):
 
             c = banco.conexao.cursor()
 
-            c.execute("update login set usuario = '" + self.usuario + "', senha = '" + self.senha + "', nome = '" + self.nome + "', crm = '" + self.crm + "' where usuario = '" + self.usuario + "' ")
+            c.execute("update login set usuario = '" + self.usuario + "', "
+                "senha = '" + self.senha + "', nome = '" + self.nome + "', "
+                "crm = '" + self.crm + "' where usuario = '" + self.usuario + "' ")
 
             banco.conexao.commit()
             c.close()
