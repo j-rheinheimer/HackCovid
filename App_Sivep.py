@@ -1604,7 +1604,7 @@ class Application:
         self.container53['pady'] = 8
         self.container53.pack()
 
-        self.lbl_titulo = Label(self.container1)
+        self.lbl_titulo = Label(self.container53)
         self.lbl_titulo['text'] = 'Conclusão'
         self.lbl_titulo['font'] = self.fonte_titulo
         self.lbl_titulo.pack()
