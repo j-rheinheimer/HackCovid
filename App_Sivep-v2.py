@@ -1046,52 +1046,52 @@ class Application:
         self.txtc38_3.pack(side=LEFT)
         self.dados_clinicos.append(self.txtc38_3.get())
 
-        self.container24 = Frame(janela_dados_clinicos)
-        self.container24["padx"] = 20
-        self.container24["pady"] = 8
-        self.container24.pack()
-
-        self.lblc38_4 = Label(self.container24)
+        self.lblc38_4 = Label(self.container23)
         self.lblc38_4["text"] = "    A mãe amamentava a criança?(1-Sim 2-Não 9-Ignorado)"
         self.lblc38_4["font"] = self.fonte
         self.lblc38_4.pack(side=LEFT)
 
-        self.txtc38_4 = Entry(self.container24)
+        self.txtc38_4 = Entry(self.container23)
         self.txtc38_4["width"] = 15
         self.txtc38_4["font"] = self.fonte
         self.txtc38_4.pack(side=LEFT)
         self.dados_clinicos.append(self.txtc38_4.get())
 
-        self.container25 = Frame(janela_dados_clinicos)
-        self.container25["padx"] = 20
-        self.container25["pady"] = 8
-        self.container25.pack()
+        self.container24 = Frame(janela_dados_clinicos)
+        self.container24["padx"] = 20
+        self.container24["pady"] = 8
+        self.container24.pack()
 
-        self.lblc38 = Label(self.container25)
-        self.lblc38["text"] = "Se >= 6 meses e <= 8 anos:"
+        self.lblc38 = Label(self.container24)
+        self.lblc38["text"] = "     Se >= 6 meses e <= 8 anos:"
         self.lblc38["font"] = self.fonte
         self.lblc38.pack(side=LEFT)
 
-        self.container26 = Frame(janela_dados_clinicos)
-        self.container26["padx"] = 20
-        self.container26["pady"] = 8
-        self.container26.pack()
-
-        self.lblc38_5 = Label(self.container26)
+        self.lblc38_5 = Label(self.container24)
         self.lblc38_5["text"] = "Data da dose única 1/1:"
         self.lblc38_5["font"] = self.fonte
         self.lblc38_5.pack(side=LEFT)
 
-        self.txtc38_5 = Entry(self.container26)
+        self.txtc38_5 = Entry(self.container24)
         self.txtc38_5["width"] = 15
         self.txtc38_5["font"] = self.fonte
         self.txtc38_5.pack(side=LEFT)
         self.dados_clinicos.append(self.txtc38_5.get())
 
-        self.lblc38_5_2 = Label(self.container26)
+        self.lblc38_5_2 = Label(self.container24)
         self.lblc38_5_2["text"] = "   (dose única para crianças vacinadas em campanhas de anos anteriores)"
         self.lblc38_5_2["font"] = self.fonte
         self.lblc38_5_2.pack(side=LEFT)
+
+        # self.container25 = Frame(janela_dados_clinicos)
+        # self.container25["padx"] = 20
+        # self.container25["pady"] = 8
+        # self.container25.pack()
+
+        # self.container26 = Frame(janela_dados_clinicos)
+        # self.container26["padx"] = 20
+        # self.container26["pady"] = 8
+        # self.container26.pack()
 
         self.container27 = Frame(janela_dados_clinicos)
         self.container27["padx"] = 20
@@ -1114,26 +1114,26 @@ class Application:
         self.lblc38_6_2["font"] = self.fonte
         self.lblc38_6_2.pack(side=LEFT)
 
-        self.container28 = Frame(janela_dados_clinicos)
-        self.container28["padx"] = 20
-        self.container28["pady"] = 8
-        self.container28.pack()
-
-        self.lblc38_7_1 = Label(self.container28)
+        self.lblc38_7_1 = Label(self.container27)
         self.lblc38_7_1["text"] = "Data da segunda dose:"
         self.lblc38_7_1["font"] = self.fonte
         self.lblc38_7_1.pack(side=LEFT)
 
-        self.txtc38_7 = Entry(self.container28)
+        self.txtc38_7 = Entry(self.container27)
         self.txtc38_7["width"] = 15
         self.txtc38_7["font"] = self.fonte
         self.txtc38_7.pack(side=LEFT)
         self.dados_clinicos.append(self.txtc38_7.get())
 
-        self.lblc38_7_2 = Label(self.container28)
+        self.lblc38_7_2 = Label(self.container27)
         self.lblc38_7_2["text"] = "   (2ª dose para crianças vacinadas pela primeira vez)"
         self.lblc38_7_2["font"] = self.fonte
         self.lblc38_7_2.pack(side=LEFT)
+
+        # self.container28 = Frame(janela_dados_clinicos)
+        # self.container28["padx"] = 20
+        # self.container28["pady"] = 8
+        # self.container28.pack()
 
         self.container_extra5 = Frame(janela_dados_clinicos)
         self.container_extra5["padx"] = 20
@@ -1922,35 +1922,47 @@ class Application:
         self.cadastrar['command'] = self.janela_confirma
         self.cadastrar.pack()
 
-
-
     def janela_confirma(self):
 
         janela_final_final = Toplevel(root)
+        janela_final_final.title('Confirimação')
 
         self.cont_1_fim = Frame(janela_final_final)
         self.cont_1_fim.pack()
 
-        self.cont_2_fim = Frame(janela_final_final)
-        self.cont_2_fim.pack()
-
         self.lblfimdofim = Label(self.cont_1_fim, text="Deseja concluir o cadastro?")
         self.lblfimdofim.pack()
 
-        self.btnSim = Button(self.cont_2_fim, text='SIM')
-        self.btnSim["command"] = self.cadastraFicha()
-        self.btnSim.pack(side=RIGHT)
+        self.cont_2_fim = Frame(janela_final_final)
+        self.cont_2_fim.pack()
 
-        self.btnSim = Button(self.cont_2_fim, text='NÃO')
-        self.btnSim["command"] = print('QUER SIM')
-        self.btnSim.pack(side=LEFT)
+        self.lbl_sim = Label(self.cont_2_fim)
+        self.lbl_sim['text'] = 'SIM'
+        self.lbl_sim.pack(side=RIGHT)
 
-        self.container_extra9 = Frame(janela_final_final)
-        self.container_extra9["padx"] = 20
-        self.container_extra9["pady"] = 8
-        self.container_extra9.pack()
+        self.lbl_nao = Label(self.cont_2_fim)
+        self.lbl_nao['text'] = 'NÃO'
+        self.lbl_nao.pack(side=LEFT)
 
-        self.lblmsg = Label(self.container_extra9)
+        self.cont_3_fim = Frame(janela_final_final)
+        self.cont_3_fim.pack()
+
+        self.btn_sim = Button(self.cont_3_fim)
+        self.btn_sim['text'] = ' '
+        self.btn_sim["command"] = self.cadastraFicha()
+        self.btn_sim.pack(side=RIGHT)
+
+        self.btn_nao = Button(self.cont_2_fim)
+        self.btn_nao['text'] = ' '
+        self.btn_nao["command"] = print('QUER SIM')
+        self.btn_nao.pack(side=LEFT)
+
+        self.container_4_fim = Frame(janela_final_final)
+        self.container_4_fim["padx"] = 20
+        self.container_4_fim["pady"] = 8
+        self.container_4_fim.pack()
+
+        self.lblmsg = Label(self.container_4_fim)
         self.lblmsg["text"] = " "
         self.lblmsg["font"] = ("Verdana", "10", "bold")
         self.lblmsg.pack()
