@@ -1918,18 +1918,44 @@ class Application:
         self.container_extra8.pack()
 
         self.cadastrar = Button(self.container_extra8)
-        self.cadastrar['text'] = 'Clique para cadastrar a ficha'
-        self.cadastrar['command'] = self.cadastraFicha()
+        self.cadastrar['text'] = 'Seguir para confirmação?'
+        self.cadastrar['command'] = self.janela_confirma
         self.cadastrar.pack()
 
-        self.container_extra9 = Frame(janela_dados_conclusao)
+
+
+    def janela_confirma(self):
+
+        janela_final_final = Toplevel(root)
+
+        self.cont_1_fim = Frame(janela_final_final)
+        self.cont_1_fim.pack()
+
+        self.cont_2_fim = Frame(janela_final_final)
+        self.cont_2_fim.pack()
+
+        self.lblfimdofim = Label(self.cont_1_fim, text="Deseja concluir o cadastro?")
+        self.lblfimdofim.pack()
+
+        self.btnSim = Button(self.cont_2_fim, text='SIM')
+        self.btnSim["command"] = self.cadastraFicha()
+        self.btnSim.pack(side=RIGHT)
+
+        self.btnSim = Button(self.cont_2_fim, text='NÃO')
+        self.btnSim["command"] = print('QUER SIM')
+        self.btnSim.pack(side=LEFT)
+
+        self.container_extra9 = Frame(janela_final_final)
         self.container_extra9["padx"] = 20
         self.container_extra9["pady"] = 8
         self.container_extra9.pack()
 
-        self.lbl_mensagem_final = Label(self.container_extra9, text="")
-        self.lbl_mensagem_final["font"] = self.fonte
-        self.lbl_mensagem_final.pack()
+        self.lblmsg = Label(self.container_extra9)
+        self.lblmsg["text"] = " "
+        self.lblmsg["font"] = ("Verdana", "10", "bold")
+        self.lblmsg.pack()
+
+
 
     def cadastrarUsuario(self):
         user = Usuarios()
@@ -2152,7 +2178,8 @@ class Application:
 
         ficha.lista = self.lista
 
-        self.lbl_mensagem_final["text"] = ficha.insertFicha()
+        self.lblmsg["text"] = ficha.insertFicha()
+
 
 
 
