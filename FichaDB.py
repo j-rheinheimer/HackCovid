@@ -22,7 +22,7 @@ class FichaDB:
                      c27 text, c28 text, c29 text, c30 text, c31 text,
                      c32 text, c33 text, c34 text, c35_1 text, c35_2 text,
                      c35_3 text, c35_4 text, c35_5 text, c35_6 text, c35_7 text,
-                     c35_8 text, c35_9 text, c35_10 text, c36_1 text, c36_2 text,
+                     c35_8 text, c35_9 text, c36_1 text, c36_2 text,
                      c36_3 text, c36_4 text, c36_5 text, c36_6 text,
                      c36_7 text, c36_8 text, c36_9 text, c36_10 text, c36_11 text,
                      c36_12 text, c36_13 text, c36_14_1 text, c36_14_2 text,
