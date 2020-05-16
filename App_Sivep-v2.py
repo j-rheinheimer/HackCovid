@@ -2105,7 +2105,7 @@ class Application:
         self.impsql3.close()
 
         self.df = pd.read_csv('ficha.csv')
-        plt.show(self.df['idade'].hist())
+        plt.show(self.df['c10_1'].hist())
 
     def plot_histograma_sexo(self):
         self.impsql3 = sqlite3.connect('ficha.db')
@@ -2119,7 +2119,7 @@ class Application:
         self.impsql3.close()
 
         self.df = pd.read_csv('ficha.csv')
-        plt.show(self.df['sexo'].hist())
+        plt.show(self.df['c8'].hist())
     
     def plot_histograma_estado(self):
         self.impsql3 = sqlite3.connect('ficha.db')
@@ -2133,7 +2133,7 @@ class Application:
         self.impsql3.close()
 
         self.df = pd.read_csv('ficha.csv')
-        plt.show(self.df['estado'].hist())
+        plt.show(self.df['c3'].hist())
 
     def cadastraFicha(self):
         ficha = Ficha()
