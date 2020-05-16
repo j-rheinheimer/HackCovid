@@ -2,15 +2,13 @@ from FichaDB import FichaDB
 
 
 class Ficha(object):
-    def __init__(self, lista=[]):
+    def __init__(self, lista=None):
 
-        self.lista = None
+        if lista is None:
+            self.lista = [] * 129
         self.info = {}
-        for c in range(0, 130):
-            lista[c] = None
 
-
-    def insertFicha(self, lista):
+    def insertFicha(self):
 
         banco = FichaDB()
         try:
@@ -24,7 +22,7 @@ class Ficha(object):
                       "c21, c22, c23, c24, c25, c26,"
                       "c27, c28, c29, c30, c31, c32,"
                       "c33, c34, c35_1, c35_2, c35_3, c35_4,"
-                      "c35_5, c35_6, c35_7, c35_8, c35_9, c35_10,"
+                      "c35_5, c35_6, c35_7, c35_8, c35_9,"
                       "c36_1, c36_2, c36_3, c36_4, c36_5, c36_6,"
                       "c36_7, c36_8, c36_9, c36_10, c36_11,"
                       "c36_12, c36_13, c36_14_1, c36_14_2, c37, c38_1,"
@@ -65,8 +63,7 @@ class Ficha(object):
                       "'" + self.lista[109] + "', '" + self.lista[110] + "', '" + self.lista[111] + "', '" + self.lista[112] + "', '" + self.lista[113] + "',"
                       "'" + self.lista[114] + "', '" + self.lista[115] + "', '" + self.lista[116] + "', '" + self.lista[117] + "', '" + self.lista[118] + "',"
                       "'" + self.lista[119] + "', '" + self.lista[120] + "', '" + self.lista[121] + "', '" + self.lista[122] + "', '" + self.lista[123] + "',"
-                      "'" + self.lista[124] + "', '" + self.lista[125] + "', '" + self.lista[126] + "', '" + self.lista[127] + "', '" + self.lista[128] + "',"
-                      "'" + self.lista[129] + "')")
+                      "'" + self.lista[124] + "', '" + self.lista[125] + "', '" + self.lista[126] + "', '" + self.lista[127] + "', '" + self.lista[128] + "')")
 
             banco.conexao.commit()
             c.close()
