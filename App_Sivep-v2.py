@@ -2154,8 +2154,6 @@ class Application:
 
         self.lbl_mensagem_final["text"] = ficha.insertFicha()
 
-
-
 root = Tk()
 root.title("Sivep Digital")
 Application(root)
