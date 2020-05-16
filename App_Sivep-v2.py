@@ -3,6 +3,10 @@
 from Usuarios import *
 from tkinter import *
 from Ficha import *
+import pandas as pd
+import matplotlib.pyplot as plt
+import sqlite3
+import csv
 
 
 class Application:
@@ -1949,7 +1953,7 @@ class Application:
 
         self.btn_sim = Button(self.cont_3_fim)
         self.btn_sim['text'] = ' '
-        self.btn_sim["command"] = self.cadastraFicha()
+        self.btn_sim["command"] = self.cadastraFicha
         self.btn_sim.pack(side=RIGHT)
 
         self.btn_nao = Button(self.cont_2_fim)
@@ -1966,8 +1970,6 @@ class Application:
         self.lblmsg["text"] = " "
         self.lblmsg["font"] = ("Verdana", "10", "bold")
         self.lblmsg.pack()
-
-
 
     def cadastrarUsuario(self):
         user = Usuarios()
@@ -2047,9 +2049,91 @@ class Application:
         self.txtcrm.delete(0, END)
 
         if self.lblmsg["text"] == "Login bem sucedido!":
-            self.janela_dadosPaciente()
+            self.janelaMenu() 
         else:
             return
+
+    def janelaMenu(self):
+        janela_menu = Toplevel(root)
+        janela_menu.title("Menu Principal")
+
+        self.container_extra9 = Frame(janela_menu)
+        self.container_extra9["pady"] = 10
+        self.container_extra9.pack()
+
+        self.proxima_janela = Button(self.container_extra9)
+        self.proxima_janela['text'] = 'Clique para realizar novo preenchimento de ficha'
+        self.proxima_janela['command'] = self.janela_dadosPaciente
+        self.proxima_janela.pack()
+
+        self.container_extra10 = Frame(janela_menu)
+        self.container_extra10["pady"] = 10
+        self.container_extra10.pack()
+
+        self.proxima_janela = Button(self.container_extra10)
+        self.proxima_janela['text'] = 'Clique para visualizar histograma por idade'
+        self.proxima_janela['command'] = self.plot_histograma_idade
+        self.proxima_janela.pack()
+
+        self.container_extra11 = Frame(janela_menu)
+        self.container_extra11["pady"] = 10
+        self.container_extra11.pack()
+
+        self.proxima_janela = Button(self.container_extra11)
+        self.proxima_janela['text'] = 'Clique para visualizar histograma por sexo'
+        self.proxima_janela['command'] = self.plot_histograma_sexo
+        self.proxima_janela.pack()
+
+        self.container_extra12 = Frame(janela_menu)
+        self.container_extra12["pady"] = 10
+        self.container_extra12.pack()
+
+        self.proxima_janela = Button(self.container_extra12)
+        self.proxima_janela['text'] = 'Clique para visualizar histograma por estado'
+        self.proxima_janela['command'] = self.plot_histograma_estado
+        self.proxima_janela.pack()
+
+    def plot_histograma_idade(self):
+        self.impsql3 = sqlite3.connect('ficha.db')
+        self.sql3_cursor = self.impsql3.cursor()
+        self.sql3_cursor.execute('SELECT * FROM ficha')
+        with open('ficha.csv','w') as out_csv_file:
+            csv_out = csv.writer(out_csv_file)
+            csv_out.writerow([d[0] for d in self.sql3_cursor.description])
+            for result in self.sql3_cursor:
+                csv_out.writerow(result)
+        self.impsql3.close()
+
+        self.df = pd.read_csv('ficha.csv')
+        plt.show(self.df['idade'].hist())
+
+    def plot_histograma_sexo(self):
+        self.impsql3 = sqlite3.connect('ficha.db')
+        self.sql3_cursor = self.impsql3.cursor()
+        self.sql3_cursor.execute('SELECT * FROM ficha')
+        with open('ficha.csv','w') as out_csv_file:
+            csv_out = csv.writer(out_csv_file)
+            csv_out.writerow([d[0] for d in self.sql3_cursor.description])
+            for result in self.sql3_cursor:
+                csv_out.writerow(result)
+        self.impsql3.close()
+
+        self.df = pd.read_csv('ficha.csv')
+        plt.show(self.df['sexo'].hist())
+    
+    def plot_histograma_estado(self):
+        self.impsql3 = sqlite3.connect('ficha.db')
+        self.sql3_cursor = self.impsql3.cursor()
+        self.sql3_cursor.execute('SELECT * FROM ficha')
+        with open('ficha.csv','w') as out_csv_file:
+            csv_out = csv.writer(out_csv_file)
+            csv_out.writerow([d[0] for d in self.sql3_cursor.description])
+            for result in self.sql3_cursor:
+                csv_out.writerow(result)
+        self.impsql3.close()
+
+        self.df = pd.read_csv('ficha.csv')
+        plt.show(self.df['estado'].hist())
 
     def cadastraFicha(self):
         ficha = Ficha()
