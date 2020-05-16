@@ -343,7 +343,7 @@ class Application:
 
         self.lblc11 = Label(self.container_extra2, font=self.fonte)
         self.lblc11['text'] = ("11 - Gestante (1 - 1ºTrimerstre, 2 - 2ºTrimestre, 3 - 3ºTrimestre "
-            "4 - Idade gestacional ignorada, 5 - Não 6 - Não se aplica, 9 - Ignorado: ")
+                               "4 - Idade gestacional ignorada, 5 - Não 6 - Não se aplica, 9 - Ignorado: ")
         self.lblc11.pack(side=LEFT)
 
         self.txtc11 = Entry(self.container_extra2)
@@ -359,7 +359,7 @@ class Application:
 
         self.lblc12 = Label(self.container5, font=self.fonte)
         self.lblc12['text'] = ("12 - Raça/Cor (1 - Branca, 2 - Preta, 3 - Amarela"
-            "4 - Parda, 5 - Indígena, 9 - Ignorado): ")
+                               "4 - Parda, 5 - Indígena, 9 - Ignorado): ")
         self.lblc12.pack(side=LEFT)
 
         self.txtc12 = Entry(self.container5)
@@ -384,8 +384,8 @@ class Application:
 
         self.lblc14 = Label(self.container_extra3, font=self.fonte)
         self.lblc14['text'] = ("14 - Escolaridade (0 - Sem Escolaridade/Analfabeto"
-            "1 - Fundamental I, 2 - Fundamental II, 3 - Médio"
-            "4 - Superior, 5 - Não se Aplica, 9 - Ignorado): ")
+                               "1 - Fundamental I, 2 - Fundamental II, 3 - Médio"
+                               "4 - Superior, 5 - Não se Aplica, 9 - Ignorado): ")
         self.lblc14.pack(side=LEFT)
 
         self.txtc14 = Entry(self.container_extra3)
@@ -424,7 +424,7 @@ class Application:
 
     def dadosResidencia(self):
         janela_dados_residencia = Toplevel(root)
-        janela_dados_residencia.title("Sivep Ficha") 
+        janela_dados_residencia.title("Sivep Ficha")
 
         self.dados_de_residencia = []
 
@@ -529,7 +529,7 @@ class Application:
 
         self.lblc25 = Label(self.container8, font=self.fonte)
         self.lblc25['text'] = ("25 - Zona (1 - Urbana, 2 - Rural"
-            "3 - Periurbana, 9 - Ignorado): ")
+                               "3 - Periurbana, 9 - Ignorado): ")
         self.lblc25.pack(side=LEFT)
 
         self.txtc25 = Entry(self.container8)
@@ -578,7 +578,8 @@ class Application:
         self.container10.pack()
 
         self.lblc27 = Label(self.container10, font=self.fonte)
-        self.lblc27['text'] = ('27 - Paciente tem histórico de viagem internacional até 14 dias antes do início dos sintomas? '
+        self.lblc27['text'] = (
+            '27 - Paciente tem histórico de viagem internacional até 14 dias antes do início dos sintomas? '
             '(1 - Sim, 2 - Não, 9 - Ignorado)')
         self.lblc27.pack(side=LEFT)
 
@@ -1916,11 +1917,9 @@ class Application:
         self.container_extra8["pady"] = 8
         self.container_extra8.pack()
 
-        self.lista = concatena_lista
-
         self.cadastrar = Button(self.container_extra8)
         self.cadastrar['text'] = 'Clique para cadastrar a ficha'
-        self.cadastrar['command'] = self.cadastraFicha(lista)
+        self.cadastrar['command'] = self.cadastraFicha()
         self.cadastrar.pack()
 
         self.container_extra9 = Frame(janela_dados_conclusao)
@@ -1928,10 +1927,9 @@ class Application:
         self.container_extra9["pady"] = 8
         self.container_extra9.pack()
 
-    def concatena_lista(self):
-        self.lista = (self.dados_do_paciente + self.dados_de_residencia + self.dados_clinicos + 
-        self.dados_atendimento + self.dados_laboratoriai +self. dados_conclusao)
-        return self.lista
+        self.lbl_mensagem_final = Label(self.container_extra9, text="")
+        self.lbl_mensagem_final["font"] = self.fonte
+        self.lbl_mensagem_final.pack()
 
     def cadastrarUsuario(self):
         user = Usuarios()
@@ -2015,13 +2013,147 @@ class Application:
         else:
             return
 
-    def cadastraFicha(self, lista):
-        ficha = Ficha(lista)
+    def cadastraFicha(self):
+        ficha = Ficha()
 
-        for c in range(0, 130):
-            ficha.lista[c] = lista[c]
+        self.lista = []
+        self.lista.append(self.txtc1.get())
+        self.lista.append(self.txtc2.get())
+        self.lista.append(self.txtc3.get())
+        self.lista.append(self.txtc4_1.get())
+        self.lista.append(self.txtc4_2.get())
+        self.lista.append(self.txtc5_1.get())
+        self.lista.append(self.txtc5_2.get())
+        self.lista.append(self.txtc6.get())
+        self.lista.append(self.txtc7.get())
+        self.lista.append(self.txtc8.get())
+        self.lista.append(self.txtc9.get())
+        self.lista.append(self.txtc10_1.get())
+        self.lista.append(self.txtc10_2.get())
+        self.lista.append(self.txtc11.get())
+        self.lista.append(self.txtc12.get())
+        self.lista.append(self.txtc13.get())
+        self.lista.append(self.txtc14.get())
+        self.lista.append(self.txtc15.get())
+        self.lista.append(self.txtc16.get())
+        self.lista.append(self.txtc17.get())
+        self.lista.append(self.txtc18.get())
+        self.lista.append(self.txtc19_1.get())
+        self.lista.append(self.txtc19_2.get())
+        self.lista.append(self.txtc20.get())
+        self.lista.append(self.txtc21.get())
+        self.lista.append(self.txtc22.get())
+        self.lista.append(self.txtc23.get())
+        self.lista.append(self.txtc24.get())
+        self.lista.append(self.txtc25.get())
+        self.lista.append(self.txtc26.get())
+        self.lista.append(self.txtc27.get())
+        self.lista.append(self.txtc28.get())
+        self.lista.append(self.txtc29.get())
+        self.lista.append(self.txtc30.get())
+        self.lista.append(self.txtc31.get())
+        self.lista.append(self.txtc32.get())
+        self.lista.append(self.txtc33.get())
+        self.lista.append(self.txtc34.get())
+        self.lista.append(self.txtc35_1.get())
+        self.lista.append(self.txtc35_2.get())
+        self.lista.append(self.txtc35_3.get())
+        self.lista.append(self.txtc35_4.get())
+        self.lista.append(self.txtc35_5.get())
+        self.lista.append(self.txtc35_6.get())
+        self.lista.append(self.txtc35_7.get())
+        self.lista.append(self.txtc35_8.get())
+        self.lista.append(self.txtc35_9.get())
+        self.lista.append(self.txtc36_1.get())
+        self.lista.append(self.txtc36_2.get())
+        self.lista.append(self.txtc36_3.get())
+        self.lista.append(self.txtc36_4.get())
+        self.lista.append(self.txtc36_5.get())
+        self.lista.append(self.txtc36_6.get())
+        self.lista.append(self.txtc36_7.get())
+        self.lista.append(self.txtc36_8.get())
+        self.lista.append(self.txtc36_9.get())
+        self.lista.append(self.txtc36_10.get())
+        self.lista.append(self.txtc36_11.get())
+        self.lista.append(self.txtc36_12.get())
+        self.lista.append(self.txtc36_13.get())
+        self.lista.append(self.txtc36_14_1.get())
+        self.lista.append(self.txtc36_14_2.get())
+        self.lista.append(self.txtc37.get())
+        self.lista.append(self.txtc38_1.get())
+        self.lista.append(self.txtc38_2.get())
+        self.lista.append(self.txtc38_3.get())
+        self.lista.append(self.txtc38_4.get())
+        self.lista.append(self.txtc38_5.get())
+        self.lista.append(self.txtc38_6.get())
+        self.lista.append(self.txtc38_7.get())
+        self.lista.append(self.txtc39.get())
+        self.lista.append(self.txtc40.get())
+        self.lista.append(self.txtc41.get())
+        self.lista.append(self.txtc42.get())
+        self.lista.append(self.txtc43.get())
+        self.lista.append(self.txtc44.get())
+        self.lista.append(self.txtc45_1.get())
+        self.lista.append(self.txtc45_2.get())
+        self.lista.append(self.txtc46_1.get())
+        self.lista.append(self.txtc46_2.get())
+        self.lista.append(self.txtc47.get())
+        self.lista.append(self.txtc48.get())
+        self.lista.append(self.txtc49.get())
+        self.lista.append(self.txtc50.get())
+        self.lista.append(self.txtc51.get())
+        self.lista.append(self.txtc52.get())
+        self.lista.append(self.txtc53.get())
+        self.lista.append(self.txtc54.get())
+        self.lista.append(self.txtc55.get())
+        self.lista.append(self.txtc56.get())
+        self.lista.append(self.txtc57.get())
+        self.lista.append(self.txtc58.get())
+        self.lista.append(self.txtc59_1.get())
+        self.lista.append(self.txtc59_2.get())
+        self.lista.append(self.txtc59_3.get())
+        self.lista.append(self.txtc59_4.get())
+        self.lista.append(self.txtc59_5.get())
+        self.lista.append(self.txtc59_6.get())
+        self.lista.append(self.txtc59_7.get())
+        self.lista.append(self.txtc59_8.get())
+        self.lista.append(self.txtc59_9.get())
+        self.lista.append(self.txtc60_1.get())
+        self.lista.append(self.txtc60_2.get())
+        self.lista.append(self.txtc61.get())
+        self.lista.append(self.txtc62.get())
+        self.lista.append(self.txtc63_1_1.get())
+        self.lista.append(self.txtc63_1_2.get())
+        self.lista.append(self.txtc63_2.get())
+        self.lista.append(self.txtc63_3.get())
+        self.lista.append(self.txtc63_4.get())
+        self.lista.append(self.txtc63_5_1.get())
+        self.lista.append(self.txtc63_5_2.get())
+        self.lista.append(self.txtc63_5_3.get())
+        self.lista.append(self.txtc63_5_4.get())
+        self.lista.append(self.txtc63_5_5.get())
+        self.lista.append(self.txtc63_5_6.get())
+        self.lista.append(self.txtc63_5_7.get())
+        self.lista.append(self.txtc63_5_8.get())
+        self.lista.append(self.txtc63_5_9.get())
+        self.lista.append(self.txtc63_5_10.get())
+        self.lista.append(self.txtc63_5_11.get())
+        self.lista.append(self.txtc64_1.get())
+        self.lista.append(self.txtc64_2.get())
+        self.lista.append(self.txtc65.get())
+        self.lista.append(self.txtc66.get())
+        self.lista.append(self.txtc67.get())
+        self.lista.append(self.txtc68.get())
+        self.lista.append(self.txtc69.get())
+        self.lista.append(self.txtc70.get())
 
-        self.lblmsg["text"] = ficha.insertFicha()
+        print(self.lista)
+        print(len(self.lista))
+
+        ficha.lista = self.lista
+
+        self.lbl_mensagem_final["text"] = ficha.insertFicha()
+
 
 
 root = Tk()
