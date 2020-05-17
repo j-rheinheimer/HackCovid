@@ -1940,24 +1940,16 @@ class Application:
         self.cont_2_fim = Frame(janela_final_final)
         self.cont_2_fim.pack()
 
-        self.lbl_sim = Label(self.cont_2_fim)
-        self.lbl_sim['text'] = 'SIM'
-        self.lbl_sim.pack(side=RIGHT)
-
-        self.lbl_nao = Label(self.cont_2_fim)
-        self.lbl_nao['text'] = 'NÃO'
-        self.lbl_nao.pack(side=LEFT)
-
         self.cont_3_fim = Frame(janela_final_final)
         self.cont_3_fim.pack()
 
         self.btn_sim = Button(self.cont_3_fim)
-        self.btn_sim['text'] = ' '
+        self.btn_sim['text'] = 'Sim'
         self.btn_sim["command"] = self.cadastraFicha
         self.btn_sim.pack(side=RIGHT)
 
         self.btn_nao = Button(self.cont_2_fim)
-        self.btn_nao['text'] = ' '
+        self.btn_nao['text'] = 'Não'
         self.btn_nao["command"] = print('QUER SIM')
         self.btn_nao.pack(side=LEFT)
 
@@ -2268,9 +2260,6 @@ class Application:
         self.lista.append(self.txtc68.get())
         self.lista.append(self.txtc69.get())
         self.lista.append(self.txtc70.get())
-
-        print(self.lista)
-        print(len(self.lista))
 
         ficha.lista = self.lista
 
